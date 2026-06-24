@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens - estratti dal brand donq.io
+   ============================================================ */
+@theme {
+  --color-ink: #141414;          /* testo principale */
+  --color-ink-soft: #42424a;     /* testo muted */
+  --color-faint: #b9bac0;        /* grigio chiaro */
+  --color-paper: #ffffff;        /* sfondo chiaro */
+  --color-night: #050505;        /* nero profondo */
+  --color-night-2: #141416;      /* nero/grigio scuro */
+
+  /* washes pastello (accenti gradiente) */
+  --color-wash-rose: #fef9ff;
+  --color-wash-blue: #f9faff;
+  --color-wash-cyan: #f5fdff;
+
+  /* accenti vivi derivati dai wash, per il grafo e gli highlight */
+  --color-accent-rose: #e9a8ff;
+  --color-accent-blue: #8fb3ff;
+  --color-accent-cyan: #7fe7ff;
+
+  --font-display: var(--font-unbounded), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xl2: 1.5rem;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+* {
+  border-color: color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-ink) 14%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-ink) 26%, transparent);
+  background-clip: content-box;
+}
+
+/* ============================================================
+   Utility custom
+   ============================================================ */
+.font-display { font-family: var(--font-display); }
+
+/* sfondo "aurora" animato a wash pastello */
+.aurora-bg {
+  position: relative;
+  isolation: isolate;
+  background: var(--color-paper);
+}
+.aurora-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  background:
+    radial-gradient(40% 50% at 15% 20%, var(--color-wash-rose) 0%, transparent 60%),
+    radial-gradient(45% 45% at 85% 15%, var(--color-wash-blue) 0%, transparent 60%),
+    radial-gradient(50% 55% at 75% 85%, var(--color-wash-cyan) 0%, transparent 60%),
+    radial-gradient(40% 40% at 20% 90%, var(--color-wash-rose) 0%, transparent 60%);
+  filter: blur(20px);
+  animation: aurora 22s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(2%, -2%, 0) scale(1.06); }
+  100% { transform: translate3d(-2%, 1%, 0) scale(1.03); }
+}
+
+/* superficie vetro */
+.glass {
+  background: color-mix(in srgb, var(--color-paper) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+.glass-dark {
+  background: color-mix(in srgb, var(--color-night) 60%, transparent);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid color-mix(in srgb, #ffffff 10%, transparent);
+}
+
+/* highlight animato della porzione citata */
+.cited {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-accent-cyan) 38%, transparent),
+    color-mix(in srgb, var(--color-accent-blue) 30%, transparent)
+  );
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent-blue) 40%, transparent);
+  animation: citedPulse 1.6s ease-out;
+}
+@keyframes citedPulse {
+  0%   { background-color: color-mix(in srgb, var(--color-accent-rose) 60%, transparent); }
+  100% { }
+}
+
+/* contenuti markdown */
+.prose-wiki { line-height: 1.7; }
+.prose-wiki h1 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; margin: 0 0 .25rem; letter-spacing: -.02em; }
+.prose-wiki h2 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin: 1.6rem 0 .5rem; letter-spacing: -.01em; }
+.prose-wiki h3 { font-weight: 600; margin: 1.1rem 0 .35rem; }
+.prose-wiki p { margin: .6rem 0; color: var(--color-ink); }
+.prose-wiki ul { list-style: disc; padding-left: 1.25rem; margin: .5rem 0; }
+.prose-wiki ol { list-style: decimal; padding-left: 1.25rem; margin: .5rem 0; }
+.prose-wiki li { margin: .25rem 0; }
+.prose-wiki table { width: 100%; border-collapse: collapse; margin: .8rem 0; font-size: .9rem; }
+.prose-wiki th, .prose-wiki td { border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent); padding: .5rem .65rem; text-align: left; }
+.prose-wiki th { background: var(--color-wash-blue); font-weight: 600; }
+.prose-wiki code { background: color-mix(in srgb, var(--color-ink) 6%, transparent); padding: .1rem .35rem; border-radius: 5px; font-size: .85em; }
+.prose-wiki strong { font-weight: 600; }
+.prose-wiki blockquote { border-left: 3px solid var(--color-accent-blue); padding-left: .9rem; color: var(--color-ink-soft); margin: .8rem 0; }
+
+/* link interni alla wiki [[...]] */
+.wikilink {
+  color: var(--color-ink);
+  text-decoration: none;
+  font-weight: 600;
+  background: linear-gradient(transparent 70%, color-mix(in srgb, var(--color-accent-cyan) 55%, transparent) 0);
+  cursor: pointer;
+  transition: background-size .2s, color .2s;
+  padding: 0 1px;
+}
+.wikilink:hover { background-size: 100% 100%; }
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--color-ink) 6%, transparent) 25%,
+    color-mix(in srgb, var(--color-ink) 12%, transparent) 37%,
+    color-mix(in srgb, var(--color-ink) 6%, transparent) 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-bg::before, .cited, .shimmer { animation: none; }
+}

@@ -1,0 +1,28 @@
+Da: RSPP (Sicurezza)
+A: Tutti i reparti
+Oggetto: Promemoria DPI, accessi ed emergenze - affiggere in bacheca
+
+Ragazzi, riepilogo le cose importanti, vale per Vimercate e Agrate.
+
+ACCESSI: in reparto si entra col badge personale e con i DPI indosso. Visitatori SEMPRE accompagnati.
+
+DPI OBBLIGATORI in officina: scarpe antinfortunistiche, occhiali, e cuffie/tappi nelle aree segnalate
+(rumore). Per il montaggio dei cuscinetti servono anche i guanti anti-taglio. Se un DPI è rovinato si
+sostituisce: si ritira dal magazzino con causale.
+
+SEGNALETICA: blu = obbligo, rosso = divieto, giallo = pericolo. Attenzione alle zone con CNC in
+funzione: organi in movimento.
+
+FORMAZIONE: nessuno entra in reparto senza aver fatto la formazione sicurezza. Per i neoassunti è parte
+dell'onboarding ed è registrata (serve anche per gli audit qualità).
+
+EMERGENZE
+- Evacuazione: al suono CONTINUO si interrompe la lavorazione, si mette in sicurezza la macchina (arresto
+  di emergenza) e si va al punto di raccolta seguendo le vie di fuga. NON usare gli ascensori.
+- Primo soccorso: chiamare un addetto e, se serve, il 112. Ogni infortunio va registrato; se legato a un
+  processo può far scattare un'azione correttiva. Gli addetti al primo soccorso sono formati in
+  onboarding.
+- Antincendio: estintori/idranti segnalati. Usare l'estintore SOLO se addestrati, altrimenti evacuare.
+
+Numeri utili: Emergenze 112 - RSPP interno int. 210.
+Grazie, M.

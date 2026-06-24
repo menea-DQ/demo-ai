@@ -1,0 +1,15 @@
+**/node_modules
+**/.next
+**/out
+.git
+.env
+**/.env.local
+**/.env*.local
+**/*.tsbuildinfo
+**/data/*.db
+**/content/graph.json
+.DS_Store
+deploy
+DEPLOY.md
+README.md
+CLAUDE.md

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Monorepo demo AI di Donq (sicurezza condivisa @donq/security)",
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "dev:wiki": "pnpm --filter @donq/wiki dev",
     "build:wiki": "pnpm --filter @donq/wiki build",

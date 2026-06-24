@@ -1,97 +1,92 @@
-# Deploy in produzione — Aurora Wiki
+# Deploy in produzione — Donq Demos (monorepo)
 
-Guida al deploy self-hosted (Node always-on + Redis) **dietro reverse proxy**, con focus sul punto
-di sicurezza più delicato: rendere affidabile l'IP del client per il rate-limit per-IP.
+Guida al deploy self-hosted delle demo (`apps/wiki`, `apps/finance`, …) **dietro reverse proxy**, con
+Redis condiviso e limiti **segregati per app**. Focus sul punto di sicurezza più delicato: rendere
+affidabile l'IP del client per il rate-limit per-IP.
 
 ## Perché serve un reverse proxy che "sovrascrive" X-Forwarded-For
-L'app identifica il client tramite l'header `x-forwarded-for` (vedi `lib/http.ts → getClientIp`), di
-cui legge il **primo** valore. Il problema: un client può inviare un proprio `X-Forwarded-For` falso.
-Se l'app è esposta direttamente, o se il proxy **accoda** invece di sovrascrivere, un bot può cambiare
-header a ogni richiesta e azzerare il rate-limit per-IP.
+Le app identificano il client tramite `x-forwarded-for` (vedi `@donq/security → getClientIp`), di cui
+leggono il **primo** valore. Un client può però inviare un `X-Forwarded-For` falso: se l'app è esposta
+direttamente, o il proxy **accoda** invece di sovrascrivere, un bot può azzerare il rate-limit per-IP.
 
-Regole per renderlo sicuro:
-1. **L'app ascolta solo su `127.0.0.1`** (non pubblicata verso l'esterno) → l'unico ingresso è il proxy.
-2. **Il proxy SOVRASCRIVE `X-Forwarded-For`** con l'IP reale di chi si connette (`$remote_addr`), scartando
-   qualunque valore inviato dal client.
+Regole:
+1. **Le app ascoltano solo su `127.0.0.1`** (porte diverse) → unico ingresso = il proxy.
+2. **Il proxy SOVRASCRIVE `X-Forwarded-For`** con l'IP reale (`$remote_addr`).
 
-> Nota: anche nello scenario peggiore (IP falsificabile), il **budget globale giornaliero**
-> (`lib/budget.ts`) resta il limite "hard" che protegge i crediti su tutta l'app.
+> Anche nello scenario peggiore (IP falsificabile), il **budget globale giornaliero** resta il limite
+> "hard" che protegge i crediti, separatamente per ciascuna app (`<ns>:budget:<data>`).
 
----
+## Build & runtime (Docker, monorepo)
+Ogni app ha un `Dockerfile` che builda **dal contesto della root del workspace** (per risolvere il
+pacchetto condiviso `@donq/security`). Le immagini girano con `next start` (porta interna 3000).
 
-## Opzione A — nginx sull'host (consigliata)
-Dà l'IP reale del client senza complicazioni.
+```bash
+# env di produzione per ciascuna app (NON committare: contengono i segreti)
+cp apps/wiki/.env.example    apps/wiki/.env.production
+cp apps/finance/.env.example apps/finance/.env.production
+#  → in ENTRAMBE: REDIS_URL=redis://redis:6379 ; SESSION_SECRET forte ; chiavi Turnstile
+#  → APP_NAMESPACE distinti: wiki / finance (segregazione dei limiti su Redis)
 
-1. **Avvia app + Redis** (l'app resta su `127.0.0.1:3000`):
-   ```bash
-   cp .env.example .env.production    # compila i valori (vedi sotto)
-   docker compose -f deploy/docker-compose.prod.yml up -d --build
-   ```
-2. **Installa la config nginx** ([deploy/nginx.conf](deploy/nginx.conf)) sull'host:
-   ```bash
-   sudo cp deploy/nginx.conf /etc/nginx/sites-available/aurora
-   sudo ln -s /etc/nginx/sites-available/aurora /etc/nginx/sites-enabled/aurora
-   sudo nginx -t && sudo systemctl reload nginx
-   ```
-   La parte chiave:
-   ```nginx
-   proxy_pass http://127.0.0.1:3000;
-   proxy_set_header X-Forwarded-For $remote_addr;   # SOVRASCRIVE (non accoda)
-   proxy_set_header X-Real-IP       $remote_addr;
-   proxy_buffering off;                              # streaming chat NDJSON
-   ```
-3. **TLS**: con certbot → `sudo certbot --nginx -d aurora.example.com`.
+docker compose -f deploy/docker-compose.prod.yml up -d --build
+#  wiki    → 127.0.0.1:3000
+#  finance → 127.0.0.1:3001
+#  redis   → condiviso (volume persistente)
+```
+
+## Reverse proxy (nginx sull'host) — una app per sottodominio
+Installa [deploy/nginx.conf](deploy/nginx.conf):
+```bash
+sudo cp deploy/nginx.conf /etc/nginx/sites-available/donq
+sudo ln -s /etc/nginx/sites-available/donq /etc/nginx/sites-enabled/donq
+sudo nginx -t && sudo systemctl reload nginx
+```
+Punti chiave (per ogni server block):
+```nginx
+proxy_pass http://127.0.0.1:3000;          # 3001 per finance
+proxy_set_header X-Forwarded-For $remote_addr;   # SOVRASCRIVE (no spoofing)
+proxy_set_header X-Real-IP       $remote_addr;
+proxy_buffering off;                         # streaming chat NDJSON (wiki)
+```
+TLS con certbot: `sudo certbot --nginx -d wiki.example.com -d finance.example.com`.
 
 ### Dietro una CDN (es. Cloudflare)
-Lì `$remote_addr` è l'IP della CDN. Abilita `ngx_http_realip_module`, fidati solo dei range della CDN e
-leggi l'header con l'IP reale (`CF-Connecting-IP`) — esempio commentato in `deploy/nginx.conf`.
+`$remote_addr` sarebbe l'IP della CDN: abilita `ngx_http_realip_module`, fidati solo dei range della CDN
+e leggi `CF-Connecting-IP` (esempio commentato in `deploy/nginx.conf`).
 
----
+### Perché nginx sull'host e non in compose
+In Docker (bridge + porte pubblicate) nginx vedrebbe l'IP del **gateway Docker**, non del client →
+rate-limit per-IP inutile. Su Linux, in alternativa, un container nginx con `network_mode: "host"` che fa
+proxy verso `127.0.0.1:300x`.
 
-## Opzione B — tutto in Docker (nginx in compose)
-In Docker, con le porte pubblicate sul bridge, nginx vedrebbe come IP sorgente il **gateway Docker**,
-non il client → il rate-limit per-IP sarebbe inutile. Per preservare l'IP reale, su **Linux** si usa
-un container nginx in `network_mode: "host"` che fa proxy verso `127.0.0.1:3000`:
-
-```yaml
-  nginx:
-    image: nginx:1.27-alpine
-    network_mode: "host"        # solo Linux: nginx vede l'IP reale
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    restart: unless-stopped
-```
-(con `network_mode: host` l'app va comunque pubblicata su `127.0.0.1:3000` e nginx fa `proxy_pass http://127.0.0.1:3000`).
-Su macOS/Windows `network_mode: host` non funziona allo stesso modo: usa l'Opzione A.
-
-### Come verificare che l'IP non sia falsificabile
+### Verifica che l'IP non sia falsificabile
 ```bash
-curl -H 'X-Forwarded-For: 1.2.3.4' https://aurora.example.com/api/session -X POST -d '{}'
+curl -H 'X-Forwarded-For: 1.2.3.4' https://wiki.example.com/api/session -X POST -d '{}'
+# poi: redis-cli KEYS 'wiki:rl:*'  → deve usare l'IP reale, non 1.2.3.4
 ```
-Controlla in Redis (`redis-cli KEYS 'rl:*'`) che la chiave usi l'IP reale, non `1.2.3.4`.
 
----
-
-## Variabili d'ambiente di produzione (`.env.production`)
+## Variabili d'ambiente
+Comuni (gestite da `@donq/security`, in ogni `.env.production`):
 | Var | Note |
 |---|---|
-| `OPENROUTER_API_KEY` | chiave OpenRouter (runtime, risposte chat) |
-| `OPENROUTER_MODEL` | default `google/gemini-2.5-flash` |
-| `SESSION_SECRET` | **`openssl rand -hex 32`** — ≥16 char, NON il default (altrimenti l'app si blocca in prod) |
-| `REDIS_URL` | `redis://redis:6379` (nome servizio nel compose) |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | **obbligatorie in prod** (anti-bot) |
-| `NEXT_PUBLIC_APP_URL` | URL pubblico (usato come `HTTP-Referer` verso OpenRouter) |
-| `DAILY_GLOBAL_BUDGET` | tetto domande/giorno su tutta l'app (default 500) |
-| `RATE_LIMIT_MAX` / `RATE_LIMIT_WINDOW_SEC` | limite per-IP (default 10 / 1800) |
-| `MAX_CONCURRENT_SESSIONS` | sessioni concorrenti (default 50) |
+| `APP_NAMESPACE` | **distinto per app** (`wiki`, `finance`) — segrega chiavi Redis e cookie |
+| `REDIS_URL` | `redis://redis:6379` (servizio compose) |
+| `SESSION_SECRET` | **`openssl rand -hex 32`** — ≥16 char, NON il default (in prod l'app si blocca) |
+| `RATE_LIMIT_MAX` / `RATE_LIMIT_WINDOW_SEC` | default 10 / 1800 |
+| `DAILY_GLOBAL_BUDGET` | tetto richieste/giorno per app (default 500) |
+| `MAX_CONCURRENT_SESSIONS` | default 50 |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | **obbligatorie in prod** |
+| `NEXT_PUBLIC_APP_URL` / `NEXT_PUBLIC_CONTACT_URL` | URL pubblico / CTA contatti |
 
-> Suggerimento: imposta anche uno **spend limit nativo su OpenRouter** come tetto hard in euro,
-> indipendente dalla logica applicativa.
+Specifiche per app: la wiki aggiunge `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`, `LLM_MAX_TOKENS`
+(vedi `apps/wiki/.env.example`). Finance non usa LLM nello scaffold attuale.
+
+> Suggerimento: imposta anche uno **spend limit nativo su OpenRouter** come tetto hard in euro per la wiki.
 
 ## Checklist sicurezza prod
-- [ ] App pubblicata solo su `127.0.0.1` (mai 0.0.0.0 esposto).
+- [ ] App pubblicate solo su `127.0.0.1` (mai 0.0.0.0 esposto).
 - [ ] Proxy che **sovrascrive** `X-Forwarded-For`.
-- [ ] TLS attivo (HTTPS).
-- [ ] `SESSION_SECRET` forte e casuale.
+- [ ] TLS attivo (HTTPS) su ogni sottodominio.
+- [ ] `SESSION_SECRET` forte e casuale (per app).
+- [ ] `APP_NAMESPACE` distinto per app.
 - [ ] Chiavi Turnstile configurate.
-- [ ] Spend limit impostato su OpenRouter.
+- [ ] Spend limit su OpenRouter (wiki).

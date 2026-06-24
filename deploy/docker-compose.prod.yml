@@ -1,29 +1,25 @@
 # =============================================================================
-#  Stack di produzione: app Next.js + Redis.
-#  L'app è pubblicata SOLO su 127.0.0.1:3000 → raggiungibile esclusivamente dal
-#  reverse proxy nginx installato sull'host (vedi deploy/nginx.conf).
+#  Stack di produzione (monorepo): app wiki + app finance + Redis condiviso.
+#  Ogni app è pubblicata SOLO su 127.0.0.1 → raggiungibile solo dal reverse proxy
+#  nginx installato sull'host (vedi deploy/nginx.conf).
 #
 #  Uso (dalla root del repo):
-#    cp .env.example .env.production      # compila i valori di produzione
+#    cp apps/wiki/.env.example    apps/wiki/.env.production
+#    cp apps/finance/.env.example apps/finance/.env.production
+#    # compila i valori (SESSION_SECRET forte, Turnstile, REDIS_URL=redis://redis:6379, APP_NAMESPACE)
 #    docker compose -f deploy/docker-compose.prod.yml up -d --build
 #
-#  In .env.production ricorder(ALMENO):
-#    OPENROUTER_API_KEY=...
-#    SESSION_SECRET=<openssl rand -hex 32>     # >=16 char, NON il default
-#    REDIS_URL=redis://redis:6379              # nome del servizio qui sotto
-#    NEXT_PUBLIC_TURNSTILE_SITE_KEY=...        # obbligatorie in prod
-#    TURNSTILE_SECRET_KEY=...
-#    NEXT_PUBLIC_APP_URL=https://aurora.example.com
+#  NB: in .env.production di ENTRAMBE le app -> REDIS_URL=redis://redis:6379
+#      e APP_NAMESPACE distinti (wiki / finance) per la segregazione dei limiti.
 # =============================================================================
 services:
-  app:
+  wiki:
     build:
       context: ..
-      dockerfile: Dockerfile
-    env_file: ../.env.production
+      dockerfile: apps/wiki/Dockerfile
+    env_file: ../apps/wiki/.env.production
     environment:
       - NODE_ENV=production
-    # Pubblicato solo su localhost dell'host: nessun accesso diretto dall'esterno.
     ports:
       - "127.0.0.1:3000:3000"
     depends_on:
@@ -31,11 +27,25 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  finance:
+    build:
+      context: ..
+      dockerfile: apps/finance/Dockerfile
+    env_file: ../apps/finance/.env.production
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "127.0.0.1:3001:3000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
   redis:
     image: redis:7-alpine
-    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru"]
     volumes:
-      - aurora-redis-data:/data
+      - donq-redis-data:/data
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -44,13 +54,10 @@ services:
       retries: 5
 
 volumes:
-  aurora-redis-data:
+  donq-redis-data:
 
 # -----------------------------------------------------------------------------
-#  Perché nginx NON è qui dentro?
-#  In Docker, con le porte pubblicate sul bridge, nginx vedrebbe come IP sorgente
-#  il gateway Docker (non il client reale) → il rate-limit per-IP diventerebbe inutile.
-#  Quindi nginx va sull'HOST (vede l'IP vero) e fa proxy verso 127.0.0.1:3000.
-#  In alternativa (solo Linux) si può usare un container nginx con
-#  `network_mode: "host"` che fa proxy verso 127.0.0.1:3000 — vedi DEPLOY.md.
+#  nginx NON è qui: in Docker (bridge + porte pubblicate) vedrebbe l'IP del gateway,
+#  non del client → rate-limit per-IP inutile. Va sull'HOST e fa proxy verso
+#  127.0.0.1:3000 (wiki) e 127.0.0.1:3001 (finance). Vedi deploy/nginx.conf.
 # -----------------------------------------------------------------------------

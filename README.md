@@ -39,7 +39,11 @@ Modello reverse proxy / IP affidabile in [DEPLOY.md](DEPLOY.md). NB: i file Dock
 `deploy/`) sono da **adattare al monorepo** (build per-app con contesto workspace) — TODO.
 
 ## Documentazione
-- [apps/wiki/CLAUDE.md](apps/wiki/CLAUDE.md) — architettura della demo wiki (LLM Wiki, OpenRouter, sicurezza).
-- [DEPLOY.md](DEPLOY.md) — deploy e sicurezza del reverse proxy.
+- [CLAUDE.md](CLAUDE.md) — guida comune del monorepo (struttura, sicurezza condivisa, comandi, deploy, lezioni).
+- [apps/wiki/ARCHITECTURE.md](apps/wiki/ARCHITECTURE.md) — dettagli specifici della demo wiki (LLM Wiki, OpenRouter).
+- `apps/finance/ARCHITECTURE.md` — dettagli della demo finance *(da creare con la UI/feature)*.
+- [DEPLOY.md](DEPLOY.md) — deploy monorepo e sicurezza del reverse proxy.
+
+> Prima di modificare un'app, leggi il `CLAUDE.md` di root **e** l'`ARCHITECTURE.md` dell'app interessata.
 
 Demo realizzate da **Donq**. I dati delle aziende di esempio sono inventati a scopo dimostrativo.

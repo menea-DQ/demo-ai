@@ -1,15 +1,15 @@
 # dependencies
-/node_modules
-/.pnp
+node_modules/
+.pnp
 .pnp.*
 
-# next.js
-/.next/
-/out/
+# next.js (a qualunque profondità nel monorepo)
+.next/
+out/
 next-env.d.ts
 
 # production
-/build
+build/
 
 # env
 .env
@@ -23,8 +23,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# generato in fase di build
-/content/graph.json
+# artefatti generati in build (a qualunque profondità)
+**/content/graph.json
+**/data/*.db
+**/data/*.db-*
 
 # typescript
 *.tsbuildinfo

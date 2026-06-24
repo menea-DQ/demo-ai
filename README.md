@@ -1,94 +1,45 @@
-# Aurora Wiki - Demo AI documentale (LLM Wiki) · Donq
+# Donq Demos — Monorepo
 
-Demo da far provare ai clienti: ricerca e Q&A documentale in stile *chat + wiki interconnessa*.
-L'utente chatta con il knowledge base di una PMI manifatturiera di esempio ("Officine Meccaniche
-Aurora S.r.l."), ottiene risposte **con le fonti citate** e naviga tra le **pagine collegate**, anche
-tramite un **knowledge graph** interattivo.
+Monorepo delle demo AI di Donq. La **logica di sicurezza è condivisa** in un unico pacchetto e ogni
+demo è un'app a sé; i limiti d'uso su Redis sono **segregati per app** (stesso IP → contatori indipendenti).
 
-## 🧠 Architettura: vero LLM Wiki (metodologia Karpathy)
-Non è un RAG "chunk + similarità". Segue la metodologia **LLM Wiki** a 3 livelli:
+```
+apps/
+  wiki/        Demo "Aurora Wiki" — chat documentale (LLM Wiki + OpenRouter) — vedi apps/wiki/CLAUDE.md
+  finance/     Demo "Aurora Finance" — interrogazione dati finanziari da SQLite
+packages/
+  security/    @donq/security — sessione firmata, rate-limit per-IP, budget globale, sessioni
+               concorrenti, Turnstile. Chiavi Redis e cookie prefissati da APP_NAMESPACE.
+```
 
-1. **`content/raw/`** - sorgenti immutabili (documenti aziendali grezzi e disordinati). Verità di base.
-2. **`content/wiki/`** - pagine markdown **generate dall'LLM** (tipi: `sources/`, `concepts/`, `entities/`,
-   più `index.md` e `log.md`), interconnesse con wikilink `[[id|testo]]`.
-3. **`content/WIKI_SCHEMA.md`** - le convenzioni che guidano la costruzione.
+## Sicurezza condivisa (`@donq/security`)
+Stessa logica per tutte le demo: 10 richieste / 30 min per IP (sliding window Redis), budget globale
+giornaliero, limite sessioni concorrenti, anti-bot Turnstile, cookie di sessione firmato (HMAC).
+**Segregazione**: ogni app imposta `APP_NAMESPACE` (es. `wiki`, `finance`) → chiavi `wiki:rl:<ip>` vs
+`finance:rl:<ip>`, cookie `wiki_sid` vs `finance_sid`. Una richiesta sul wiki **non** scala i limiti del
+finance, anche dallo stesso IP.
 
-Operazioni (come da metodologia):
-- **Ingest** (a cura dell'**agente Claude Code**, NON a runtime): l'agente legge le sorgenti in `content/raw/`
-  e, seguendo `content/WIKI_SCHEMA.md`, scrive a mano le pagine in `content/wiki/` (concept/entity/source)
-  interconnesse con `[[id|testo]]`. Nessuna chiamata API a questo passo: è l'agente a costruire il wiki.
-- **Query** (runtime): si selezionano le pagine d'ingresso più pertinenti e si **seguono i collegamenti**
-  del wiki; l'LLM risponde citando le pagine (pre-sintetizzate → risposte migliori e coerenti).
-- **Lint** (`pnpm wiki:lint`): salute del wiki (orfani, link non risolti, pagine senza summary).
-
-Il grafo `content/graph.json` è derivato dalle pagine (`pnpm wiki:graph`, automatico prima di dev/build).
-
-## 🤖 Modello: OpenRouter (Gemini 2.5 Flash)
-Le chiamate LLM **a runtime** (risposte in chat) passano da **OpenRouter** (API OpenAI-compatibile).
-La costruzione del wiki NON usa l'API. Modello consigliato: **`google/gemini-2.5-flash`** - veloce ed
-economico. Configurabile via env (`OPENROUTER_MODEL`); alternative: `openai/gpt-4o-mini`,
-`meta-llama/llama-3.3-70b-instruct`.
-
-## ✨ Esperienza
-- **Chat** in linguaggio naturale (streaming).
-- **Citazioni cliccabili**: ogni risposta apre la pagina wiki sorgente con la **porzione evidenziata**.
-- **Pagine collegate** + **grafo** navigabile (drag, zoom, pan; nodi colorati per categoria).
-
-## 🔒 Sicurezza (configurabile via env)
-| Difesa | Come |
-|---|---|
-| Max **10 domande / 30 min** per utente | sliding window atomico su Redis (IP + cookie di sessione firmato) |
-| **Anti-bot** | Cloudflare Turnstile verificato server-side all'avvio sessione |
-| **Anti drain crediti** | budget globale giornaliero (hard stop) + limite token risposta |
-| **Anti flooding** | limite di sessioni concorrenti |
-| Robustezza | store condiviso **Redis** (non in-memory) |
-| Superato un limite | modale dedicata + **CTA al form contatti Donq** |
-
-La chiave OpenRouter è usata SOLO lato server (mai nel bundle client).
-
-## 🚀 Avvio in locale
-Requisiti: Node ≥ 20, pnpm, Docker (Redis).
-
+## Avvio
 ```bash
 pnpm install
-cp .env.example .env.local        # compila OPENROUTER_API_KEY e SESSION_SECRET
-docker compose up -d              # Redis su localhost:6379
-pnpm dev                          # http://localhost:3000 (rigenera graph.json dalle pagine wiki)
+docker compose up -d                 # Redis condiviso (localhost:6379)
+
+# Wiki
+cp apps/wiki/.env.example apps/wiki/.env.local      # OPENROUTER_API_KEY, SESSION_SECRET, APP_NAMESPACE=wiki
+pnpm dev:wiki                                        # http://localhost:3000
+
+# Finance
+cp apps/finance/.env.example apps/finance/.env.local # SESSION_SECRET, APP_NAMESPACE=finance
+pnpm dev:finance                                     # (PORT=3002 pnpm --filter @donq/finance dev)
 ```
+Build: `pnpm build:wiki` / `pnpm build:finance` (o `pnpm -r build`).
 
-> Le pagine in `content/wiki/` sono un artefatto committato (costruito dall'agente seguendo
-> `content/WIKI_SCHEMA.md`). `dev`/`build` rigenerano solo `graph.json` dalle pagine, senza LLM.
+## Deploy
+Modello reverse proxy / IP affidabile in [DEPLOY.md](DEPLOY.md). NB: i file Docker (`Dockerfile`,
+`deploy/`) sono da **adattare al monorepo** (build per-app con contesto workspace) — TODO.
 
-Comandi wiki:
-- `pnpm wiki:graph` - rigenera `content/graph.json` dalle pagine
-- `pnpm wiki:lint` - health check del wiki (orfani, link non risolti)
+## Documentazione
+- [apps/wiki/CLAUDE.md](apps/wiki/CLAUDE.md) — architettura della demo wiki (LLM Wiki, OpenRouter, sicurezza).
+- [DEPLOY.md](DEPLOY.md) — deploy e sicurezza del reverse proxy.
 
-## ⚙️ Env principali
-Vedi [.env.example](.env.example):
-- `OPENROUTER_API_KEY`, `OPENROUTER_MODEL` (default `google/gemini-2.5-flash`)
-- `REDIS_URL`, `SESSION_SECRET`
-- `RATE_LIMIT_MAX` (10), `RATE_LIMIT_WINDOW_SEC` (1800)
-- `DAILY_GLOBAL_BUDGET` (500), `MAX_CONCURRENT_SESSIONS` (50)
-- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`
-- `NEXT_PUBLIC_CONTACT_URL` (default `https://donq.io/contacts`)
-
-## 🏗️ Struttura
-```
-app/             landing, /wiki, API (session, chat)
-components/      WikiApp, ChatPanel, DocViewer, GraphView, LimitModal, Markdown
-lib/             env, llm (OpenRouter), redis, session, rateLimit, budget, turnstile,
-                 retrieval, wiki-answer, citations, graph
-content/raw/     sorgenti immutabili
-content/wiki/    pagine generate dall'LLM (artefatto)
-scripts/         wiki-graph (deriva graph.json), wiki-lint
-```
-
-## 🚢 Deploy (self-hosted)
-Stack pronto in [DEPLOY.md](DEPLOY.md): `Dockerfile` (output standalone) + `deploy/docker-compose.prod.yml`
-(app su `127.0.0.1:3000` + Redis) + `deploy/nginx.conf` (reverse proxy che **sovrascrive**
-`x-forwarded-for` per un rate-limit per-IP affidabile, con buffering off per lo streaming).
-In **produzione**: `SESSION_SECRET` forte + chiavi Turnstile obbligatorie. Vedi la guida per dettagli,
-varianti CDN/Docker e checklist di sicurezza.
-
----
-Demo realizzata da **Donq**. I dati di "Officine Meccaniche Aurora S.r.l." sono inventati a scopo dimostrativo.
+Demo realizzate da **Donq**. I dati delle aziende di esempio sono inventati a scopo dimostrativo.

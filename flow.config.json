@@ -1,0 +1,130 @@
+{
+  "specStore": {
+    "mode": "same-repo",
+    "path": ".ai-dev/specs",
+    "repoUrl": null
+  },
+  "changelog": {
+    "path": ".ai-dev/changelog.md"
+  },
+  "architectureDocs": {
+    "byContext": {
+      "apps/wiki": {
+        "path": "apps/wiki/ARCHITECTURE.md"
+      },
+      "apps/finance": {
+        "path": "apps/finance/ARCHITECTURE.md"
+      },
+      "packages/security": {
+        "path": "packages/security/architecture.md"
+      }
+    }
+  },
+  "testPlaybook": {
+    "_note": "Runner: Vitest (unit/integration) + Playwright (e2e). unit=@donq/security (test reali, verdi); integration=pnpm -r test (vitest in tutti i pacchetti; le app passano con passWithNoTests finche' non hanno test propri); end-to-end=pnpm -r test:e2e (Playwright nelle app; richiede browser via 'pnpm exec playwright install' + Redis attivo + env app per girare davvero); validazione-spec=smoke veloce sugli unit di security. non-regression resta DA_DEFINIRE: nessun harness di data-diff pre/post ancora.",
+    "unit": {
+      "appliesWhen": "modifiche a logica/funzioni pure e helper, in particolare @donq/security (config, session, rateLimit, budget, turnstile, http)",
+      "pathPatterns": [
+        "packages/security/src/**",
+        "**/lib/**"
+      ],
+      "command": "pnpm --filter @donq/security test",
+      "needsBeforeSnapshot": false
+    },
+    "integration": {
+      "appliesWhen": "modifiche a route API o all'interazione con Redis / SQLite",
+      "pathPatterns": [
+        "**/app/api/**",
+        "apps/finance/lib/**",
+        "apps/finance/data/**"
+      ],
+      "command": "pnpm -r test",
+      "needsBeforeSnapshot": false
+    },
+    "end-to-end": {
+      "appliesWhen": "modifiche a UI / componenti / pagine (chat wiki, UI finance)",
+      "pathPatterns": [
+        "**/app/**",
+        "**/components/**"
+      ],
+      "command": "pnpm -r test:e2e",
+      "needsBeforeSnapshot": false
+    },
+    "non-regression": {
+      "appliesWhen": "modifiche a codice che produce/trasforma dati persistenti (build graph.json, popolamento SQLite)",
+      "pathPatterns": [
+        "apps/wiki/scripts/**",
+        "apps/wiki/content/**",
+        "apps/finance/scripts/**",
+        "apps/finance/data/**"
+      ],
+      "command": "<DA_DEFINIRE>",
+      "needsBeforeSnapshot": true
+    },
+    "validazione-spec": {
+      "appliesWhen": "sempre (leggera)",
+      "pathPatterns": [
+        "**"
+      ],
+      "command": "pnpm --filter @donq/security test",
+      "needsBeforeSnapshot": false
+    }
+  },
+  "projectConventions": {
+    "rules": [
+      "Sicurezza condivisa una volta sola in @donq/security, parametrizzata da APP_NAMESPACE: non duplicare la logica di sicurezza nelle singole app.",
+      "Segregazione tra app: APP_NAMESPACE deve prefissare TUTTE le chiavi Redis e il nome cookie (es. wiki:rl:<ip> vs finance:rl:<ip>, cookie wiki_sid vs finance_sid).",
+      "/api/session deve RIUSARE il sid dal cookie valido: non azzerare i limiti ne' creare sessioni concorrenti fantasma a ogni refresh.",
+      "Header HTTP solo ASCII puro: un em-dash o altri non-ASCII (es. in X-Title) fa fallire fetch di undici con 'Connection error'.",
+      "react-markdown: non disabilitare la sanitizzazione di urlTransform con (url)=>url (XSS); usare un sanitizer che blocca javascript: e data:.",
+      "Segreti solo lato server, mai nel bundle client; .env.local mai committati (ogni app ha il suo). SESSION_SECRET forte in prod (guard attivo: blocca se default o < 16 char).",
+      "Costi/LLM: consumare rate-limit e budget PRIMA della chiamata costosa (fail-closed sui crediti) e impostare un tetto (token + budget globale giornaliero).",
+      "Fail-closed su Redis: se Redis e' irraggiungibile le route falliscono senza consumare crediti; la demo resta ferma finche' Redis non torna.",
+      "Next.js 15 (App Router) + TypeScript + Tailwind v4, package manager pnpm, Node 22+.",
+      "Prima di modificare un contesto leggere il suo ARCHITECTURE.md; per modifiche a packages/security valutare l'impatto su TUTTE le app."
+    ],
+    "sourceDoc": "CLAUDE.md"
+  },
+  "maxRefine": {
+    "warn": 2,
+    "block": 4
+  },
+  "fastPath": {
+    "askEachTime": true,
+    "autoUnderThreshold": false,
+    "thresholdLines": 20
+  },
+  "testPaths": [
+    "**/*.test.*",
+    "**/*.spec.*",
+    "tests/**",
+    "e2e/**"
+  ],
+  "dataProducingPaths": [
+    "apps/wiki/scripts/**",
+    "apps/wiki/content/**",
+    "apps/finance/scripts/**",
+    "apps/finance/data/**"
+  ],
+  "monorepo": {
+    "tool": "auto",
+    "affectedBase": "pre-task"
+  },
+  "tokenEconomy": {
+    "ponytail": "full",
+    "headroom": false
+  },
+  "connectors": {
+    "ticketing": "productive",
+    "helpdesk": "zammad",
+    "envFile": ".ai-dev/connectors.env",
+    "instances": {}
+  },
+  "telemetry": {
+    "enabled": true,
+    "otlpEndpoint": "http://localhost:4318",
+    "otlpProtocol": "http/protobuf",
+    "serviceName": "ai-dev-flow",
+    "projectName": null
+  }
+}

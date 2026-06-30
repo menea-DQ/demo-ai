@@ -3,6 +3,12 @@ node_modules/
 .pnp
 .pnp.*
 
+# test (playwright)
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/.cache/
+
 # next.js (a qualunque profondità nel monorepo)
 .next/
 out/
@@ -15,6 +21,7 @@ build/
 .env
 .env.local
 .env*.local
+.ai-dev/connectors.env
 
 # misc
 .DS_Store

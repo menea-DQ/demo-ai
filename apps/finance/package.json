@@ -10,7 +10,9 @@
     "prebuild": "tsx scripts/seed-db.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest run --passWithNoTests",
+    "test:e2e": "playwright test --pass-with-no-tests"
   },
   "dependencies": {
     "@donq/security": "workspace:*",

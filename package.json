@@ -10,5 +10,9 @@
     "dev:finance": "pnpm --filter @donq/finance dev",
     "build:finance": "pnpm --filter @donq/finance build",
     "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "vitest": "^4.1.9"
   }
 }

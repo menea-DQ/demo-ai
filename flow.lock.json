@@ -1,0 +1,42 @@
+{
+  "kitVersion": "0.0.4",
+  "processVersion": "0.0.4",
+  "installedAt": "2026-06-30T00:00:00Z",
+  "assessment": {
+    "type": "existing",
+    "monorepo": true,
+    "contexts": [
+      "apps/finance",
+      "apps/wiki",
+      "packages/security"
+    ],
+    "filesHash": "4c7eb986acef20ae78b091494cdc142f888871d073a22359fd094a5f6a0aef02"
+  },
+  "install": {
+    "createdFiles": [
+      {
+        "relPath": "flow.config.json",
+        "userContent": true,
+        "sha256": "cf684438048d5e0b1ae5ce56f8a8ffa2ac04d35e0fe5d1e7040edc880e84cdf1"
+      }
+    ],
+    "createdDirectories": [],
+    "settings": {
+      "relPath": ".claude/settings.json",
+      "fileCreatedByUs": false,
+      "enabledPluginKeys": [
+        "ai-dev-flow@ai-dev-flow",
+        "ponytail@ponytail"
+      ],
+      "marketplaceNames": [
+        "ai-dev-flow",
+        "ponytail"
+      ]
+    },
+    "claudeMd": {
+      "relPath": "CLAUDE.md",
+      "fileCreatedByUs": false,
+      "blockAdded": false
+    }
+  }
+}

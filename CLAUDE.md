@@ -1,3 +1,8 @@
+<!-- ai-dev-flow:start -->
+Questo progetto usa AI-Dev Flow. Le istruzioni operative sono in AGENT.md (agnostico).
+Leggi AGENT.md e seguilo. Versione del processo: vedi flow.lock.json.
+<!-- ai-dev-flow:end -->
+
 # CLAUDE.md — Donq Demos (monorepo)
 
 Guida comune per chi (incluso un futuro agente) lavora su questo **monorepo** di demo AI di Donq.

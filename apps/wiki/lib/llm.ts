@@ -15,8 +15,8 @@ export function llm(): OpenAI {
       timeout: 60_000,
       defaultHeaders: {
         // NB: header HTTP solo ASCII (un em-dash qui causava "Connection error" con undici).
+        // X-Title è passato per-richiesta (per azienda) in wiki-answer.ts.
         "HTTP-Referer": env.appUrl,
-        "X-Title": "Aurora Wiki - Donq",
       },
     });
   }

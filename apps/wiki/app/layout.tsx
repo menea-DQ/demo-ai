@@ -16,7 +16,7 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: "Aurora Wiki - Knowledge AI · powered by Donq",
+  title: "Donq Wiki - Knowledge AI · powered by Donq",
   description:
     "Demo: chatta con la knowledge base aziendale e naviga i documenti collegati. Un sistema LLM Wiki realizzato da Donq.",
   robots: { index: false, follow: false },

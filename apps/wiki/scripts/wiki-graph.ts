@@ -1,12 +1,15 @@
-// Deriva content/graph.json dalle pagine del wiki (nessuna chiamata LLM).
-// Eseguito in automatico prima di dev/build per tenere il grafo sincronizzato.
+// Deriva content/<slug>/graph.json dalle pagine di ogni azienda (nessuna chiamata LLM).
+// Eseguito in automatico prima di dev/build/test per tenere i grafi sincronizzati.
+//
+// Multi use-case: ogni sottocartella di content/ che contiene un wiki/ è un'azienda
+// (slug = nome cartella). Per ciascuna si scrive content/<slug>/graph.json.
 //
 // È volutamente TOLLERANTE rispetto a come il wiki viene generato:
-//  - scansiona ricorsivamente content/wiki/**/*.md (qualsiasi sottocartella),
+//  - scansiona ricorsivamente <slug>/wiki/**/*.md (qualsiasi sottocartella),
 //  - ricava `type` dal frontmatter o dal nome della cartella,
 //  - risolve i [[link]] per id esatto, oppure per slug dell'id/titolo (così
 //    funziona anche con link in stile [[Titolo Pagina]]).
-import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
@@ -29,9 +32,23 @@ export interface WikiGraphData {
   warnings: string[];
 }
 
-const WIKI_DIR = join(process.cwd(), "content", "wiki");
+const CONTENT_DIR = join(process.cwd(), "content");
 // File a livello radice che non sono "pagine" del grafo.
-const SKIP_FILES = new Set(["index.md", "log.md", "readme.md"]);
+const SKIP_FILES = new Set(["index.md", "log.md", "readme.md", "schema.md", "overview.md"]);
+
+/** Le aziende = sottocartelle di content/ con dentro un wiki/. slug = nome cartella. */
+export function usecaseDirs(): { slug: string; wikiDir: string; outFile: string }[] {
+  if (!existsSync(CONTENT_DIR)) return [];
+  const out: { slug: string; wikiDir: string; outFile: string }[] = [];
+  for (const entry of readdirSync(CONTENT_DIR, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const wikiDir = join(CONTENT_DIR, entry.name, "wiki");
+    if (existsSync(wikiDir) && statSync(wikiDir).isDirectory()) {
+      out.push({ slug: entry.name, wikiDir, outFile: join(CONTENT_DIR, entry.name, "graph.json") });
+    }
+  }
+  return out;
+}
 
 export function extractLinks(text: string): string[] {
   const out: string[] = [];
@@ -44,7 +61,7 @@ export function extractLinks(text: string): string[] {
   return out;
 }
 
-/** Elenco ricorsivo dei .md sotto content/wiki, con la cartella di primo livello. */
+/** Elenco ricorsivo dei .md sotto una cartella wiki, con la cartella di primo livello. */
 function listMarkdown(dir: string, topFolder = ""): { file: string; topFolder: string }[] {
   const out: { file: string; topFolder: string }[] = [];
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -81,16 +98,26 @@ function folderToType(folder: string): string {
   return "concept";
 }
 
-export function buildWikiGraph(): WikiGraphData {
+export function buildWikiGraph(wikiDir: string): WikiGraphData {
   const pages: WikiPageData[] = [];
   const warnings: string[] = [];
 
-  for (const { file, topFolder } of listMarkdown(WIKI_DIR)) {
+  for (const { file, topFolder } of listMarkdown(wikiDir)) {
     // I file a livello radice (index.md, log.md, SCHEMA.md, overview.md) sono
     // navigazionali/meta: non sono nodi del grafo. Conta solo ciò che sta in una sottocartella.
     if (!topFolder) continue;
     const raw = readFileSync(file, "utf8");
-    const { data, content } = matter(raw);
+    // Frontmatter YAML malformato (es. un ": " non quotato) non deve far crollare la build:
+    // si avvisa e si tratta la pagina come priva di frontmatter (id dal nome file, type dalla cartella).
+    let data: Record<string, unknown> = {};
+    let content = raw;
+    try {
+      const fm = matter(raw);
+      data = fm.data as Record<string, unknown>;
+      content = fm.content;
+    } catch (e) {
+      warnings.push(`Frontmatter non valido in ${file} (ignorato): ${(e as Error).message.split("\n")[0]}`);
+    }
     const id = String(data.id ?? file.split("/").pop()!.replace(/\.md$/, ""));
     const type = String(data.type ?? folderToType(topFolder));
     const md = content.trim();
@@ -143,24 +170,19 @@ export function buildWikiGraph(): WikiGraphData {
 }
 
 function main() {
-  const outFile = join(process.cwd(), "content", "graph.json");
-  if (!existsSync(WIKI_DIR)) {
-    const empty: WikiGraphData = {
-      generatedAt: new Date().toISOString(),
-      pages: [],
-      edges: [],
-      warnings: ["wiki non ancora generato — crea le pagine in content/wiki/"],
-    };
-    writeFileSync(outFile, JSON.stringify(empty, null, 2));
-    console.warn("⚠ content/wiki assente: generato graph.json vuoto.");
+  const dirs = usecaseDirs();
+  if (dirs.length === 0) {
+    console.warn("⚠ Nessuna azienda trovata in content/<slug>/wiki/.");
     return;
   }
-  const graph = buildWikiGraph();
-  writeFileSync(outFile, JSON.stringify(graph, null, 2));
-  console.log(`✓ graph.json: ${graph.pages.length} pagine, ${graph.edges.length} collegamenti.`);
-  if (graph.warnings.length) {
-    console.warn(`⚠ ${graph.warnings.length} avvisi:`);
-    for (const w of graph.warnings.slice(0, 20)) console.warn("  - " + w);
+  for (const { slug, wikiDir, outFile } of dirs) {
+    const graph = buildWikiGraph(wikiDir);
+    writeFileSync(outFile, JSON.stringify(graph, null, 2));
+    console.log(`✓ ${slug}/graph.json: ${graph.pages.length} pagine, ${graph.edges.length} collegamenti.`);
+    if (graph.warnings.length) {
+      console.warn(`  ⚠ ${graph.warnings.length} avvisi (primi 10):`);
+      for (const w of graph.warnings.slice(0, 10)) console.warn("    - " + w);
+    }
   }
 }
 

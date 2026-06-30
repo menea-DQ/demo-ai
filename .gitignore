@@ -32,6 +32,7 @@ yarn-error.log*
 
 # artefatti generati in build (a qualunque profondità)
 **/content/graph.json
+**/content/*/graph.json
 **/data/*.db
 **/data/*.db-*
 

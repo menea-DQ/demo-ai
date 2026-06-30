@@ -16,6 +16,7 @@ import {
 import { retrieve } from "@/lib/retrieval";
 import { streamAnswer, SENTINEL } from "@/lib/wiki-answer";
 import { parseCitations, enrichCitations, relatedFromCitations } from "@/lib/citations";
+import { getUsecase } from "@/lib/usecases";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -36,7 +37,7 @@ export async function POST(req: NextRequest) {
   }
 
   // 2) Input
-  let body: { question?: string } = {};
+  let body: { question?: string; usecaseSlug?: string } = {};
   try {
     body = await req.json();
   } catch {
@@ -47,6 +48,15 @@ export async function POST(req: NextRequest) {
   if (question.length > env.maxQuestionLen) {
     return jsonResponse(
       { ok: false, error: "too_long", message: `Domanda troppo lunga (max ${env.maxQuestionLen} caratteri).` },
+      400
+    );
+  }
+
+  // 2b) Use-case: validato server-side contro il registry (slug ignoto → nessuna chiamata LLM).
+  const usecase = getUsecase((body.usecaseSlug ?? "").toString());
+  if (!usecase) {
+    return jsonResponse(
+      { ok: false, error: "bad_request", message: "Azienda (use-case) non valida." },
       400
     );
   }
@@ -102,8 +112,8 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // 7) Retrieval sulle pagine wiki
-  const pages = retrieve(question, 4, 2);
+  // 7) Retrieval sulle pagine wiki dell'azienda selezionata
+  const pages = retrieve(usecase.slug, question, 4, 2);
   const encoder = new TextEncoder();
 
   if (pages.length === 0) {
@@ -144,7 +154,7 @@ export async function POST(req: NextRequest) {
       const keep = SENTINEL.length - 1;
 
       try {
-        const upstream = await streamAnswer(question, pages);
+        const upstream = await streamAnswer(usecase, question, pages);
         for await (const chunk of upstream) {
           const d = chunk.choices[0]?.delta?.content;
           if (!d) continue;
@@ -170,8 +180,8 @@ export async function POST(req: NextRequest) {
           if (buffer) send({ type: "token", text: buffer });
           send({ type: "citations", citations: [], related: [] });
         } else {
-          const citations = enrichCitations(parseCitations(jsonBuf));
-          const related = relatedFromCitations(citations);
+          const citations = enrichCitations(usecase.slug, parseCitations(jsonBuf));
+          const related = relatedFromCitations(usecase.slug, citations);
           send({ type: "citations", citations, related });
         }
         send({ type: "done", remaining: rl.remaining });

@@ -5,14 +5,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Markdown from "./Markdown";
 import type { ChatMessage, Citation, RelatedRef } from "./types";
 
-const SUGGESTIONS = [
-  "Cosa fare in caso di non conformità di un cuscinetto?",
-  "Quali DPI servono per il montaggio?",
-  "Come si richiedono le ferie?",
-  "Quando posso spedire un lotto al cliente?",
-];
-
 export default function ChatPanel({
+  assistantName,
+  companyName,
+  suggestions,
   messages,
   onSend,
   disabled,
@@ -21,6 +17,9 @@ export default function ChatPanel({
   onOpenRelated,
   maxLen,
 }: {
+  assistantName: string;
+  companyName: string;
+  suggestions: string[];
   messages: ChatMessage[];
   onSend: (q: string) => void;
   disabled: boolean;
@@ -51,12 +50,12 @@ export default function ChatPanel({
       <div className="px-5 py-4 border-b border-[color:color-mix(in_srgb,var(--color-ink)_8%,transparent)] flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="h-8 w-8 rounded-lg bg-[color:var(--color-night)] text-[color:var(--color-paper)] grid place-items-center text-sm font-bold">
-            A
+            {companyName.charAt(0)}
           </div>
           <div>
-            <div className="font-display font-bold leading-tight">Aurora Assistant</div>
+            <div className="font-display font-bold leading-tight">{assistantName}</div>
             <div className="text-[11px] text-[color:var(--color-ink-soft)]">
-              Officine Meccaniche Aurora · knowledge base
+              {companyName} · knowledge base
             </div>
           </div>
         </div>
@@ -74,11 +73,11 @@ export default function ChatPanel({
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
               <h3 className="font-display font-bold text-2xl mb-2">Ciao 👋</h3>
               <p className="text-[color:var(--color-ink-soft)] mb-5 text-sm leading-relaxed">
-                Sono l'assistente documentale di Officine Meccaniche Aurora. Chiedimi qualcosa: ti
+                Sono l&apos;assistente documentale di {companyName}. Chiedimi qualcosa: ti
                 risponderò citando i documenti e mostrandoti le sezioni collegate.
               </p>
               <div className="grid gap-2">
-                {SUGGESTIONS.map((s) => (
+                {suggestions.map((s) => (
                   <button
                     key={s}
                     onClick={() => onSend(s)}

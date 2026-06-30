@@ -16,7 +16,15 @@ type Tab = "doc" | "graph";
 let msgSeq = 0;
 const newId = () => `m${++msgSeq}-${Math.random().toString(36).slice(2, 7)}`;
 
+export interface UsecaseClient {
+  slug: string;
+  companyName: string;
+  assistantName: string;
+  suggestions: string[];
+}
+
 export default function WikiApp({
+  usecase,
   graph,
   turnstileSiteKey,
   ctaUrl,
@@ -24,6 +32,7 @@ export default function WikiApp({
   rateWindowMin,
   maxQuestionLen,
 }: {
+  usecase: UsecaseClient;
   graph: ClientGraph;
   turnstileSiteKey: string;
   ctaUrl: string;
@@ -106,7 +115,7 @@ export default function WikiApp({
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ question }),
+          body: JSON.stringify({ question, usecaseSlug: usecase.slug }),
         });
 
         if (!res.ok) {
@@ -176,7 +185,7 @@ export default function WikiApp({
         setBusy(false);
       }
     },
-    [busy, session, ctaUrl, openCitation]
+    [busy, session, ctaUrl, openCitation, usecase.slug]
   );
 
   /* ---------------- Nodi attivi nel grafo ---------------- */
@@ -194,6 +203,7 @@ export default function WikiApp({
     return (
       <Bootstrap
         status={session}
+        companyName={usecase.companyName}
         siteKey={turnstileSiteKey}
         error={sessionError}
         onToken={(t) => createSession(t)}
@@ -207,7 +217,7 @@ export default function WikiApp({
 
   return (
     <div className="aurora-bg h-screen flex flex-col overflow-hidden">
-      <TopBar rateLimitMax={rateLimitMax} rateWindowMin={rateWindowMin} ctaUrl={ctaUrl} />
+      <TopBar companyName={usecase.companyName} rateLimitMax={rateLimitMax} rateWindowMin={rateWindowMin} ctaUrl={ctaUrl} />
 
       {/* toggle mobile */}
       <div className="lg:hidden flex border-b border-[color:color-mix(in_srgb,var(--color-ink)_8%,transparent)] glass">
@@ -228,6 +238,9 @@ export default function WikiApp({
         {/* Chat */}
         <div className={`min-h-0 glass border-r border-[color:color-mix(in_srgb,var(--color-ink)_8%,transparent)] ${mobilePane === "chat" ? "block" : "hidden"} lg:block`}>
           <ChatPanel
+            assistantName={usecase.assistantName}
+            companyName={usecase.companyName}
+            suggestions={usecase.suggestions}
             messages={messages}
             onSend={send}
             disabled={busy}
@@ -283,11 +296,21 @@ function TabBtn({ active, onClick, children }: { active: boolean; onClick: () =>
   );
 }
 
-function TopBar({ rateLimitMax, rateWindowMin, ctaUrl }: { rateLimitMax: number; rateWindowMin: number; ctaUrl: string }) {
+function TopBar({
+  companyName,
+  rateLimitMax,
+  rateWindowMin,
+  ctaUrl,
+}: {
+  companyName: string;
+  rateLimitMax: number;
+  rateWindowMin: number;
+  ctaUrl: string;
+}) {
   return (
     <header className="shrink-0 flex items-center justify-between px-5 py-3 border-b border-[color:color-mix(in_srgb,var(--color-ink)_8%,transparent)] glass">
-      <a href="/" className="font-display font-extrabold tracking-tight">
-        Aurora<span className="text-[color:var(--color-faint)]">Wiki</span>
+      <a href="/" className="font-display font-extrabold tracking-tight truncate max-w-[60%]" title="Torna alla galleria">
+        {companyName}
       </a>
       <div className="flex items-center gap-3">
         <span className="hidden sm:inline text-[11px] text-[color:var(--color-ink-soft)]">
@@ -308,12 +331,14 @@ function TopBar({ rateLimitMax, rateWindowMin, ctaUrl }: { rateLimitMax: number;
 
 function Bootstrap({
   status,
+  companyName,
   siteKey,
   error,
   onToken,
   onRetry,
 }: {
   status: SessionStatus;
+  companyName: string;
   siteKey: string;
   error: string;
   onToken: (t: string) => void;
@@ -327,9 +352,9 @@ function Bootstrap({
         className="glass rounded-3xl p-8 max-w-sm w-full text-center"
       >
         <div className="mx-auto mb-4 h-14 w-14 rounded-2xl bg-[color:var(--color-night)] text-[color:var(--color-paper)] grid place-items-center font-display font-bold text-xl">
-          A
+          {companyName.charAt(0)}
         </div>
-        <h1 className="font-display font-extrabold text-xl mb-1">Aurora Wiki</h1>
+        <h1 className="font-display font-extrabold text-xl mb-1">{companyName}</h1>
 
         {status === "error" ? (
           <>

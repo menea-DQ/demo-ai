@@ -21,12 +21,12 @@ export function parseCitations(jsonText: string): RawCitation[] {
   }
 }
 
-export function enrichCitations(raw: RawCitation[]): Citation[] {
+export function enrichCitations(slug: string, raw: RawCitation[]): Citation[] {
   const out: Citation[] = [];
   const seen = new Set<string>();
   for (const c of raw) {
     if (!c?.pageId || seen.has(c.pageId)) continue;
-    const page = getPage(c.pageId);
+    const page = getPage(slug, c.pageId);
     if (!page) continue;
     seen.add(c.pageId);
     out.push({
@@ -40,11 +40,11 @@ export function enrichCitations(raw: RawCitation[]): Citation[] {
   return out;
 }
 
-export function relatedFromCitations(citations: Citation[]): RelatedRef[] {
+export function relatedFromCitations(slug: string, citations: Citation[]): RelatedRef[] {
   const cited = new Set(citations.map((c) => c.pageId));
   const map = new Map<string, WikiPage>();
   for (const c of citations) {
-    for (const nb of getRelatedPages(c.pageId)) {
+    for (const nb of getRelatedPages(slug, c.pageId)) {
       if (cited.has(nb.id) || map.has(nb.id)) continue;
       map.set(nb.id, nb);
     }

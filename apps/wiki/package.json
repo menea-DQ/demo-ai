@@ -12,6 +12,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "pretest": "tsx scripts/wiki-graph.ts",
     "test": "vitest run --passWithNoTests",
     "test:e2e": "playwright test --pass-with-no-tests"
   },

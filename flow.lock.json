@@ -1,6 +1,6 @@
 {
-  "kitVersion": "0.0.6",
-  "processVersion": "0.0.6",
+  "kitVersion": "0.1.0",
+  "processVersion": "0.1.0",
   "installedAt": "2026-06-30T00:00:00Z",
   "assessment": {
     "type": "existing",

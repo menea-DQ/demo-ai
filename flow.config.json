@@ -126,5 +126,16 @@
     "otlpProtocol": "http/protobuf",
     "serviceName": "ai-dev-flow",
     "projectName": null
+  },
+  "documentation": {
+    "docs": []
+  },
+  "branching": {
+    "namePattern": "<fix|feat>/<nome-breve-esplicativo>"
+  },
+  "perimeter": {
+    "enforce": true,
+    "allowedMcpServers": [],
+    "allowedSkills": []
   }
 }

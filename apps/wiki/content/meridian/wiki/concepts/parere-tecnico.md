@@ -14,8 +14,10 @@ motivata e firmata a un quesito del committente. Collega la Pratica al know-how 
 [[gestione-normativa]].
 
 ## Struttura standard
-Segue il template TM-07 (fonte: [[02-template-relazione-tecnica]]): premessa/incarico, documentazione
-esaminata, quadro normativo, accertamenti e analisi, valutazioni e parere, conclusioni, allegati.
+Segue il template TM-07, uno dei [[modelli-e-template|modelli standard]] dello Studio (fonte:
+[[02-template-relazione-tecnica]]): premessa/incarico, documentazione esaminata, quadro normativo,
+accertamenti e analisi, valutazioni e parere, conclusioni, allegati. Un esempio compilato è la
+relazione della [[pratica-2025-098]].
 
 ## Principio di tracciabilità
 Ogni affermazione tecnica deve risalire a un **documento esaminato** o a una **norma citata per
@@ -31,7 +33,8 @@ Prima della firma, un secondo professionista esegue il **controllo incrociato** 
 l'esito è registrato nel [[fascicolo-pratica]]. Solo allora il documento viene firmato e consegnato.
 
 ## Collega a
-[[fascicolo-pratica]] · [[gestione-normativa]] · [[checklist-compliance]]
+[[fascicolo-pratica]] · [[gestione-normativa]] · [[checklist-compliance]] ·
+[[modelli-e-template]] · [[pratica-2025-098]]
 
 ## Fonti
 [[02-template-relazione-tecnica]] · [[01-procedura-gestione-pratica]]

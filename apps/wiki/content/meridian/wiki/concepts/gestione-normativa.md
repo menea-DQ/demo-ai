@@ -19,18 +19,24 @@ data** della relazione. Citare una norma abrogata o in versione superata è un e
 
 ## Cosa si traccia
 - **Norme primarie e secondarie** (leggi, decreti, regolamenti comunali).
-- **Circolari e prassi** degli enti (Comune, Soprintendenza, ASL, Genio Civile): spesso decidono
-  l'interpretazione operativa più della norma stessa.
+- **[[circolari-e-prassi|Circolari e prassi]]** degli enti (Comune, Soprintendenza, ASL, Genio
+  Civile): spesso decidono l'interpretazione operativa più della norma stessa — esempio concreto:
+  la circolare del [[comune-di-bologna]] prot. 45782/2026.
+- **[[linee-guida-categoria|Linee guida di categoria]]** degli ordini professionali: non sono legge
+  ma orientano lo standard qualitativo minimo.
 - **Interpretazioni interne dei senior**: quando una norma è ambigua, l'interpretazione adottata va
-  motivata e archiviata nel [[fascicolo-pratica]] per coerenza tra pratiche.
+  motivata e archiviata nel [[fascicolo-pratica]] per coerenza tra pratiche (vedi
+  [[know-how-senior]]).
 
 ## Aggiornamento
-Le variazioni normative rilevanti vengono segnalate nelle riunioni di studio e ricadono nella
-[[checklist-compliance]]: "riferimenti citati nella versione vigente" è un punto di controllo.
+Le variazioni normative rilevanti vengono segnalate nelle [[verbale-riunione-interna|riunioni di
+studio]] e ricadono nella [[checklist-compliance]]: "riferimenti citati nella versione vigente" è un
+punto di controllo.
 
 > [!question] Da consolidare
 > Manca un registro centrale delle interpretazioni dei senior: oggi vivono nei singoli fascicoli.
 > Sarebbe un buon candidato per una pagina-hub futura del wiki.
 
 ## Collega a
-[[parere-tecnico]] · [[checklist-compliance]] · [[meridian-studio]]
+[[parere-tecnico]] · [[checklist-compliance]] · [[meridian-studio]] · [[circolari-e-prassi]] ·
+[[linee-guida-categoria]]

@@ -23,19 +23,22 @@ Ogni pratica ha un **socio firmatario** e un collaboratore tecnico indicati in c
 tecniche rilevanti vanno **motivate per iscritto** nel fascicolo: serve il perché, non solo il file.
 
 ## Cosa contiene
-Incarico e preventivo, dati del committente, verbali di sopralluogo, bozze e versioni firmate dei
-[[parere-tecnico|pareri e relazioni]], corrispondenza con enti e cliente, e la
-[[checklist-compliance]] compilata.
+Il [[preventivo-proposta|preventivo]] accettato e la lettera di incarico, dati del committente,
+verbali di sopralluogo, bozze e versioni firmate dei [[parere-tecnico|pareri e relazioni]] (secondo
+i [[modelli-e-template|modelli standard]]), [[corrispondenza-enti-clienti|corrispondenza con enti e
+cliente]], e la [[checklist-compliance]] compilata.
 
 ## Chiusura
 Consegna degli elaborati firmati + saldo → il fascicolo passa ad archivio a sola lettura e si
-conserva **10 anni** per responsabilità professionale.
+conserva **10 anni** per responsabilità professionale, diventando parte dello
+[[storico-pratiche|storico dei casi trattati]].
 
 > [!note] Regola dura
 > Nessun elaborato esce senza incarico firmato, controllo incrociato eseguito e checklist compilata.
 
 ## Collega a
-[[parere-tecnico]] · [[checklist-compliance]] · [[meridian-studio]] · [[pratica-2026-014]]
+[[parere-tecnico]] · [[checklist-compliance]] · [[meridian-studio]] · [[pratica-2026-014]] ·
+[[preventivo-proposta]] · [[corrispondenza-enti-clienti]] · [[storico-pratiche]]
 
 ## Fonti
 [[01-procedura-gestione-pratica]] · [[02-template-relazione-tecnica]]

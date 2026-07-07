@@ -1,0 +1,156 @@
+{
+  "stateVersion": 1,
+  "task": {
+    "id": "productive-18687019",
+    "type": "cr",
+    "title": null,
+    "connector": "productive",
+    "reference": "https://app.productive.io/16052-donq/tasks/18687019"
+  },
+  "phase": "done",
+  "startedAt": "2026-07-06T14:33:42.792Z",
+  "updatedAt": "2026-07-07T09:57:00.162Z",
+  "gates": {
+    "spec": {
+      "approvedAt": "2026-07-06T14:45:19.520Z"
+    },
+    "plan": {
+      "approvedAt": "2026-07-06T14:53:15.236Z"
+    },
+    "diff": {
+      "approvedAt": "2026-07-07T09:50:05.949Z"
+    }
+  },
+  "spec": {
+    "path": ".ai-dev/specs/262-evoluzione-wiki-multi-usecase.md",
+    "savedAt": "2026-07-06T14:45:31.295Z"
+  },
+  "branch": {
+    "name": "feat/wiki-meridian-fase-b",
+    "base": "main",
+    "createdAt": "2026-07-07T07:56:53.971Z"
+  },
+  "testsAuthored": null,
+  "snapshot": {
+    "status": "skipped",
+    "reason": "Comando non-regression non configurato (DA_DEFINIRE); file nuovi, nessuno stato pre-esistente da confrontare.",
+    "at": "2026-07-07T08:29:26.913Z"
+  },
+  "verification": {
+    "status": "done",
+    "tests": [
+      "post-commit re-check: @donq/security test 11/11",
+      "wiki:lint meridian 0 orfani/0 link rotti"
+    ],
+    "reason": null,
+    "diffHash": "532f745fb21aad8d80e529c1d879b7a3a0914b3d0dda6c21c1c0b82459b9d6b3",
+    "at": "2026-07-07T09:56:04.682Z"
+  },
+  "aborted": null,
+  "docReview": {
+    "status": "done",
+    "docs": [
+      ".ai-dev/changelog.md"
+    ],
+    "reason": null,
+    "at": "2026-07-07T09:52:25.839Z"
+  },
+  "changelog": {
+    "updatedAt": "2026-07-07T09:52:53.398Z"
+  },
+  "ticketUpdates": [
+    {
+      "status": "spec-approvata",
+      "at": "2026-07-06T14:47:35.480Z"
+    },
+    {
+      "status": "4. Review",
+      "at": "2026-07-07T09:56:54.907Z"
+    }
+  ],
+  "pr": {
+    "url": "https://github.com/menea-DQ/demo-ai/pull/1",
+    "at": "2026-07-07T09:55:28.135Z"
+  },
+  "overrides": [
+    {
+      "gate": "fast-path",
+      "reason": "Spec 262 (B6) già approvata copre interamente Fase B Meridian; nessuna nuova decisione architetturale, registry/wiring già presenti. Utente conferma fast-path + set 4 documenti raw proposto.",
+      "at": "2026-07-06T14:45:06.322Z"
+    }
+  ],
+  "log": [
+    {
+      "at": "2026-07-06T14:33:42.792Z",
+      "event": "task avviato"
+    },
+    {
+      "at": "2026-07-06T14:37:26.805Z",
+      "event": "fase → spec"
+    },
+    {
+      "at": "2026-07-06T14:45:06.323Z",
+      "event": "DEROGA umana sul gate \"fast-path\": Spec 262 (B6) già approvata copre interamente Fase B Meridian; nessuna nuova decisione architetturale, registry/wiring già presenti. Utente conferma fast-path + set 4 documenti raw proposto."
+    },
+    {
+      "at": "2026-07-06T14:45:19.521Z",
+      "event": "GATE UMANO approvato: spec"
+    },
+    {
+      "at": "2026-07-06T14:45:31.296Z",
+      "event": "spec salvata: .ai-dev/specs/262-evoluzione-wiki-multi-usecase.md"
+    },
+    {
+      "at": "2026-07-06T14:47:35.481Z",
+      "event": "ticket aggiornato: spec-approvata"
+    },
+    {
+      "at": "2026-07-06T14:53:15.237Z",
+      "event": "GATE UMANO approvato: plan"
+    },
+    {
+      "at": "2026-07-07T07:56:53.972Z",
+      "event": "branch di lavoro: feat/wiki-meridian-fase-b (da main)"
+    },
+    {
+      "at": "2026-07-07T08:29:26.913Z",
+      "event": "snapshot \"before\": skipped (Comando non-regression non configurato (DA_DEFINIRE); file nuovi, nessuno stato pre-esistente da confrontare.)"
+    },
+    {
+      "at": "2026-07-07T09:50:05.950Z",
+      "event": "GATE UMANO approvato: diff"
+    },
+    {
+      "at": "2026-07-07T09:51:07.068Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-07-07T09:52:25.840Z",
+      "event": "doc-review: done"
+    },
+    {
+      "at": "2026-07-07T09:52:47.456Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-07-07T09:52:53.398Z",
+      "event": "changelog aggiornato"
+    },
+    {
+      "at": "2026-07-07T09:55:28.136Z",
+      "event": "PR aperta: https://github.com/menea-DQ/demo-ai/pull/1"
+    },
+    {
+      "at": "2026-07-07T09:56:04.683Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-07-07T09:56:54.907Z",
+      "event": "ticket aggiornato: 4. Review"
+    },
+    {
+      "at": "2026-07-07T09:57:00.161Z",
+      "event": "task chiuso"
+    }
+  ]
+}

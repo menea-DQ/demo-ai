@@ -11,6 +11,21 @@
 - Impatti: [aree toccate, eventuali scelte che questa modifica vincola]
 -->
 
+## 2026-07-07 — Productive #262 — Evoluzione Wiki: multi use-case selezionabili (Fase B — contenuti Meridian)
+- Cosa: completati i contenuti di "Meridian Studio Associato", passato da 8 a **26 nodi di grafo**
+  (6 `wiki/sources/`, 12 `wiki/concepts/`, 8 `wiki/entities/`, più le 6 fonti immutabili in `raw/`) —
+  a parità di profondità con Aurora (32) e Borealis (28). Aggiornati i wikilink incrociati nelle
+  pagine esistenti e in `index.md`/`overview.md`/`log.md`. Verificato con `wiki:graph` + `wiki:lint`:
+  0 pagine orfane, 0 link non risolti, 0 summary mancanti. Solo contenuto: nessuna modifica a
+  `lib/usecases.ts`, `lib/graph.ts`, route o API — l'impianto era già cablato per `meridian` dalla
+  Fase A (commit 3868c36).
+- Perché: chiude il seed lasciato aperto in Fase A ("Meridian ... seed 8 pagine, full in Fase B"),
+  portando il contratto B6 della spec #262 a essere pienamente soddisfatto per tutte e 3 le aziende
+  (non solo Aurora e Borealis).
+- Impatti: nessun impatto architetturale. `apps/wiki/ARCHITECTURE.md` non è stato toccato: descrive
+  già correttamente lo stato attuale (mappa `{aurora, borealis, meridian}`, pipeline per-slug), e
+  non enumera conteggi di pagine per azienda che andrebbero disallineati da questa modifica.
+
 ## 2026-06-30 — Productive #262 — Evoluzione Wiki: multi use-case selezionabili (Fase A)
 - Cosa: la demo Wiki passa da singola azienda ("Aurora") a piattaforma multi use-case. Landing =
   galleria; `/wiki/<slug>` = wiki per azienda con nome/palette/documenti propri. Registry unico

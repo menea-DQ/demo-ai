@@ -1,0 +1,99 @@
+{
+  "stateVersion": 1,
+  "task": {
+    "id": "productive-19362740",
+    "type": "cr",
+    "title": "Revisione documenti progetto knowledgeBase",
+    "connector": "productive",
+    "reference": "https://app.productive.io/16052-donq/tasks/task/19362740"
+  },
+  "phase": "spec",
+  "startedAt": "2026-08-18T19:53:46.350Z",
+  "updatedAt": "2026-08-18T20:27:12.609Z",
+  "gates": {
+    "spec": {
+      "approvedAt": "2026-08-18T20:19:56.293Z"
+    },
+    "plan": {
+      "approvedAt": "2026-08-18T20:24:35.031Z"
+    }
+  },
+  "spec": {
+    "path": ".ai-dev/specs/151-revisione-documenti-knowledge-base.md",
+    "savedAt": "2026-08-18T20:20:01.423Z"
+  },
+  "branch": {
+    "name": "feat/wiki-ambiti-documentali-151",
+    "base": "main",
+    "createdAt": "2026-08-18T20:26:46.546Z"
+  },
+  "testsAuthored": null,
+  "snapshot": {
+    "status": "captured",
+    "reason": "graph.json + output wiki:lint + conteggi nodi/archi per azienda (aurora 32/284, borealis 28/302, meridian 26/163) in scratchpad/snapshot-151-before — il playbook non ha comando non-regression",
+    "at": "2026-08-18T20:27:12.609Z"
+  },
+  "verification": {
+    "status": "done",
+    "tests": [
+      "validazione-spec: @donq/security test 11/11 (turno di solo piano: modifiche in .ai-dev/**",
+      "nessun codice toccato)"
+    ],
+    "reason": null,
+    "diffHash": "d4126b29b8b7ffcd73a97337d3db7e46032eb056a12c566da5ed977d45f27b36",
+    "at": "2026-08-18T20:21:38.776Z"
+  },
+  "aborted": null,
+  "docReview": null,
+  "changelog": null,
+  "ticketUpdates": [
+    {
+      "status": "spec-approvata",
+      "at": "2026-08-18T20:20:16.913Z"
+    }
+  ],
+  "pr": null,
+  "overrides": [],
+  "log": [
+    {
+      "at": "2026-08-18T19:53:46.350Z",
+      "event": "task avviato"
+    },
+    {
+      "at": "2026-08-18T19:54:47.499Z",
+      "event": "fase → spec"
+    },
+    {
+      "at": "2026-08-18T20:19:26.907Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T20:19:56.294Z",
+      "event": "GATE UMANO approvato: spec"
+    },
+    {
+      "at": "2026-08-18T20:20:01.423Z",
+      "event": "spec salvata: .ai-dev/specs/151-revisione-documenti-knowledge-base.md"
+    },
+    {
+      "at": "2026-08-18T20:20:16.914Z",
+      "event": "ticket aggiornato: spec-approvata"
+    },
+    {
+      "at": "2026-08-18T20:21:38.777Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T20:24:35.032Z",
+      "event": "GATE UMANO approvato: plan"
+    },
+    {
+      "at": "2026-08-18T20:26:46.547Z",
+      "event": "branch di lavoro: feat/wiki-ambiti-documentali-151 (da main)"
+    },
+    {
+      "at": "2026-08-18T20:27:12.609Z",
+      "event": "snapshot \"before\": captured (graph.json + output wiki:lint + conteggi nodi/archi per azienda (aurora 32/284, borealis 28/302, meridian 26/163) in scratchpad/snapshot-151-before — il playbook non ha comando non-regression)"
+    }
+  ]
+}

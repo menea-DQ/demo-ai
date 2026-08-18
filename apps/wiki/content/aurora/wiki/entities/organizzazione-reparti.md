@@ -2,7 +2,6 @@
 title: Organizzazione e reparti
 type: entity
 tags: [azienda, organizzazione]
-sources: [01-manuale-aziendale, 02-manuale-qualita-iso9001, 06-vendite-garanzia-prodotto]
 updated: 2026-06-24
 ---
 
@@ -32,4 +31,4 @@ tutti.
 [[carla-moretti]] (direttore [[stabilimento-vimercate]]) · [[stefano-riva]] (Responsabile Qualità).
 
 ## Fonti
-[[01-manuale-aziendale]] · [[02-manuale-qualita-iso9001]] · [[06-vendite-garanzia-prodotto]]
+manuale aziendale · manuale qualità ISO 9001 · condizioni di vendita e garanzia

@@ -26,7 +26,7 @@ updated: 2026-06-24
 
 ## Cerniera con la qualifica dei subappaltatori
 Un subappaltatore non entra in cantiere finché il CSE non ha verificato il suo POS: la sicurezza è
-quindi parte integrante della [[qualifica-subappaltatori|qualifica]] *(fonte: [[02-psc-pos]])*. Le
+quindi parte integrante della [[qualifica-subappaltatori|qualifica]] *(fonte: documentazione di sicurezza PSC e POS)*. Le
 evidenze (DPI consegnati, riunioni, sospensioni meteo) finiscono nel [[giornale-lavori]].
 
 ## Collega a
@@ -34,4 +34,4 @@ evidenze (DPI consegnati, riunioni, sospensioni meteo) finiscono nel [[giornale-
 [[cantiere-via-tortona]] · [[commessa]]
 
 ## Fonti
-[[02-psc-pos]] · [[05-contratto-subappalto]]
+documentazione di sicurezza PSC e POS · contratto di subappalto

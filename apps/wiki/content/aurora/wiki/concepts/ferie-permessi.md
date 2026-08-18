@@ -2,7 +2,6 @@
 title: Ferie, permessi e smart working
 type: concept
 tags: [hr]
-sources: [04-hr-onboarding-ferie]
 updated: 2026-06-24
 ---
 
@@ -26,4 +25,4 @@ Gestione del tempo del personale, dal reparto People & HR.
 [[onboarding]] · [[chiusure-aziendali]] · [[organizzazione-reparti]]
 
 ## Fonti
-[[04-hr-onboarding-ferie]]
+documentazione HR

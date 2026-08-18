@@ -11,7 +11,7 @@ updated: 2026-06-24
 
 I controlli obbligatori che [[meridian-studio]] esegue su ogni elaborato prima della consegna al
 cliente. È il presidio che rende operativa la "regola d'oro" del [[fascicolo-pratica]]
-(fonte: [[01-procedura-gestione-pratica]]).
+(fonte: procedura PR-03 di gestione della pratica).
 
 ## La checklist
 - [ ] **Incarico firmato** presente in pratica e coerente con l'oggetto del documento.
@@ -36,4 +36,4 @@ nel [[fascicolo-pratica]] come evidenza.
 [[fascicolo-pratica]] · [[parere-tecnico]] · [[gestione-normativa]]
 
 ## Fonti
-[[01-procedura-gestione-pratica]] · [[02-template-relazione-tecnica]]
+procedura PR-03 di gestione della pratica · template TM-07 di relazione

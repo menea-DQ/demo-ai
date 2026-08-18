@@ -10,7 +10,7 @@ updated: 2026-07-07
 # Verbale di Riunione Interna
 
 [[meridian-studio]] tiene una riunione mensile dei soci, verbalizzata secondo uno schema fisso
-(fonte: [[05-verbale-riunione-interna]]): aggiornamento delle pratiche in corso, novità normative
+(fonte: verbale della riunione di studio): aggiornamento delle pratiche in corso, novità normative
 e circolari, e uno spazio dedicato a discussioni operative aperte.
 
 ## Struttura tipica
@@ -30,4 +30,4 @@ nelle procedure interne.
 [[know-how-senior]] · [[meridian-studio]] · [[fascicolo-pratica]]
 
 ## Fonti
-[[05-verbale-riunione-interna]]
+verbale della riunione di studio

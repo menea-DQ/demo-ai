@@ -20,7 +20,7 @@ Non è specifico di un cantiere: è la "fotografia" dei rischi dell'impresa.
 - Il POS è poi reso coerente con il **[[psc-pos|PSC]]** del cantiere dal [[elena-bianchi|CSE]].
 
 In altre parole: DVR → POS → coerenza con PSC. Questa catena è il cuore della
-[[sicurezza-cantiere|sicurezza in cantiere]] *(fonte: [[02-psc-pos]])*.
+[[sicurezza-cantiere|sicurezza in cantiere]] *(fonte: documentazione di sicurezza PSC e POS)*.
 
 ## Perché conta nella qualifica
 Anche i [[subappalti-fornitori|subappaltatori]] hanno il proprio DVR: è il presupposto del loro POS,
@@ -31,4 +31,4 @@ e quindi un tassello della [[qualifica-subappaltatori|qualifica]].
 [[sede-milano]] · [[subappalti-fornitori]]
 
 ## Fonti
-[[02-psc-pos]]
+documentazione di sicurezza PSC e POS

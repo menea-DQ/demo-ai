@@ -47,7 +47,7 @@ wiki/
   Collegare generosamente: i collegamenti sono preziosi quanto le pagine. Ogni pagina nelle
   sottocartelle ha **almeno 2 link uscenti** verso pagine esistenti.
 - **Citazioni alle fonti**: quando un'affermazione viene da una sorgente, citarla per id,
-  es. *(fonte: [[01-procedura-gestione-pratica]])*.
+  es. *(fonte: procedura PR-03 di gestione della pratica)*.
 - **Niente stub**: ogni pagina dice qualcosa di utile.
 - **Contraddizioni / lacune**: segnalarle in un blocco `> [!warning]` o `> [!question]`.
 

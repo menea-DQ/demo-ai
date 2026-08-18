@@ -2,7 +2,6 @@
 title: Sicurezza ed emergenze
 type: concept
 tags: [sicurezza]
-sources: [03-memo-sicurezza, 05-log-manutenzione-cnc]
 updated: 2026-06-24
 ---
 
@@ -37,4 +36,4 @@ Emergenze **112** · RSPP interno **int. 210**.
 [[onboarding]]
 
 ## Fonti
-[[03-memo-sicurezza]] · [[05-log-manutenzione-cnc]]
+memo sicurezza · quaderno di manutenzione CNC

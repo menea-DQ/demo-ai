@@ -9,13 +9,16 @@
   },
   "phase": "spec",
   "startedAt": "2026-08-18T19:53:46.350Z",
-  "updatedAt": "2026-08-18T20:27:12.609Z",
+  "updatedAt": "2026-08-18T21:15:35.817Z",
   "gates": {
     "spec": {
       "approvedAt": "2026-08-18T20:19:56.293Z"
     },
     "plan": {
       "approvedAt": "2026-08-18T20:24:35.031Z"
+    },
+    "diff": {
+      "approvedAt": "2026-08-18T21:15:35.816Z"
     }
   },
   "spec": {
@@ -27,7 +30,9 @@
     "base": "main",
     "createdAt": "2026-08-18T20:26:46.546Z"
   },
-  "testsAuthored": null,
+  "testsAuthored": {
+    "at": "2026-08-18T20:38:41.064Z"
+  },
   "snapshot": {
     "status": "captured",
     "reason": "graph.json + output wiki:lint + conteggi nodi/archi per azienda (aurora 32/284, borealis 28/302, meridian 26/163) in scratchpad/snapshot-151-before — il playbook non ha comando non-regression",
@@ -36,12 +41,12 @@
   "verification": {
     "status": "done",
     "tests": [
-      "validazione-spec: @donq/security test 11/11 (turno di solo piano: modifiche in .ai-dev/**",
-      "nessun codice toccato)"
+      "unit: @donq/security 11/11; integration: pnpm -r test 56/56 (security 11 + wiki 45); end-to-end: pnpm -r test:e2e 9/9 (incl. B11 vetrina); non-regression: diff strutturale vs snapshot before — nodi 32/28/26 -> 30/26/22",
+      "wiki:lint 0 orfani / 0 link rotti / 0 summary mancanti su tutte e 3 le aziende; build: next build OK"
     ],
     "reason": null,
-    "diffHash": "d4126b29b8b7ffcd73a97337d3db7e46032eb056a12c566da5ed977d45f27b36",
-    "at": "2026-08-18T20:21:38.776Z"
+    "diffHash": "c10345861e72671fdcaaebb7fa67b9f6c1f3ca4af0efea12c5c0fac908e37018",
+    "at": "2026-08-18T20:58:02.343Z"
   },
   "aborted": null,
   "docReview": null,
@@ -94,6 +99,18 @@
     {
       "at": "2026-08-18T20:27:12.609Z",
       "event": "snapshot \"before\": captured (graph.json + output wiki:lint + conteggi nodi/archi per azienda (aurora 32/284, borealis 28/302, meridian 26/163) in scratchpad/snapshot-151-before — il playbook non ha comando non-regression)"
+    },
+    {
+      "at": "2026-08-18T20:38:41.065Z",
+      "event": "test scritti e committati dal test-author (prima del codice)"
+    },
+    {
+      "at": "2026-08-18T20:58:02.344Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:15:35.817Z",
+      "event": "GATE UMANO approvato: diff"
     }
   ]
 }

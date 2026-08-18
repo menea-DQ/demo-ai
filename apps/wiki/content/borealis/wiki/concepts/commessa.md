@@ -38,4 +38,4 @@ contratti, [[durc|DURC]], SAL, giornale, verbali, DoP, corrispondenza.
 [[cantiere-residenze-aurora]]
 
 ## Fonti
-[[01-capitolato-appalto]] · [[03-computo-metrico]]
+[[01-capitolato-appalto]] · computo metrico estimativo

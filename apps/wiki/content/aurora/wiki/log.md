@@ -16,8 +16,8 @@ wikilink Obsidian; pagine hub. Lingua: italiano (coerente con le fonti).
 
 ## [2026-06-24] ingest | Batch iniziale — 6 fonti
 Ingestite tutte e 6 le fonti grezze in un'unica passata.
-- Fonti: [[01-manuale-aziendale]], [[02-manuale-qualita-iso9001]], [[03-memo-sicurezza]],
-  [[04-hr-onboarding-ferie]], [[05-log-manutenzione-cnc]], [[06-vendite-garanzia-prodotto]].
+- Fonti: manuale aziendale, manuale qualità ISO 9001, memo sicurezza,
+  documentazione HR, quaderno di manutenzione CNC, condizioni di vendita e garanzia.
 - Create 7 entità: [[officine-meccaniche-aurora]], [[stabilimento-vimercate]],
   [[stabilimento-agrate]], [[linea-cuscinetti-ax]], [[organizzazione-reparti]], [[reparto-qualita]],
   [[carla-moretti]], [[stefano-riva]].
@@ -32,3 +32,13 @@ Ingestite tutte e 6 le fonti grezze in un'unica passata.
 ## [2026-06-24] lint | Verifica integrità link
 Controllo automatico: nessun wikilink orfano (ogni `[[...]]` punta a una pagina esistente), nessuna
 pagina senza link in entrata. Dettaglio nel messaggio di chiusura ingest.
+
+
+## [2026-08-18] ingest | Revisione degli ambiti documentali (ticket #151)
+Ribilanciamento della knowledge base sull'elenco delle tipologie documentali del verticale
+manifatturiero. Sono diventate **consultabili** le quattro voci marcate nell'elenco: schede tecniche
+di prodotto e componente, manuali di montaggio/uso/manutenzione, listini e cataloghi tecnici,
+preventivi e proposte tecnico-economiche — quattro nuovi documenti in `raw/` con la relativa pagina
+in `sources/`. Le fonti precedenti (manuale aziendale, manuale qualità, memo sicurezza, HR, quaderno
+CNC, condizioni di vendita) **non sono più documenti consultabili**: la loro sostanza resta nelle
+pagine di processo, dove i temi sono citati come menzione. Grafo: 30 pagine, 0 orfani, 0 link rotti.

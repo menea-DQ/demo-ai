@@ -2,7 +2,6 @@
 title: Rilascio del lotto
 type: concept
 tags: [processo, qualita, hub]
-sources: [02-manuale-qualita-iso9001, 06-vendite-garanzia-prodotto]
 updated: 2026-06-24
 ---
 
@@ -25,4 +24,4 @@ Se il collaudo trova un problema, il lotto non viene rilasciato: parte invece il
 [[collaudo]] · [[condizioni-vendita]] · [[non-conformita]] · [[tolleranze-classi-precisione]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]] · [[06-vendite-garanzia-prodotto]]
+manuale qualità ISO 9001 · condizioni di vendita e garanzia

@@ -2,7 +2,6 @@
 title: Garanzia
 type: concept
 tags: [commerciale, prodotto]
-sources: [06-vendite-garanzia-prodotto]
 updated: 2026-06-24
 ---
 
@@ -27,4 +26,4 @@ il reso e, se difettoso, apre una [[non-conformita|NC]].
 [[linea-cuscinetti-ax]] · [[resi-reclami-rma]] · [[condizioni-vendita]] · [[non-conformita]]
 
 ## Fonti
-[[06-vendite-garanzia-prodotto]]
+condizioni di vendita e garanzia

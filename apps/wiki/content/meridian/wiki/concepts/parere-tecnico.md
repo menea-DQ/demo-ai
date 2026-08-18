@@ -15,7 +15,7 @@ motivata e firmata a un quesito del committente. Collega la Pratica al know-how 
 
 ## Struttura standard
 Segue il template TM-07, uno dei [[modelli-e-template|modelli standard]] dello Studio (fonte:
-[[02-template-relazione-tecnica]]): premessa/incarico, documentazione esaminata, quadro normativo,
+template TM-07 di relazione): premessa/incarico, documentazione esaminata, quadro normativo,
 accertamenti e analisi, valutazioni e parere, conclusioni, allegati. Un esempio compilato è la
 relazione della [[pratica-2025-098]].
 
@@ -37,4 +37,4 @@ l'esito è registrato nel [[fascicolo-pratica]]. Solo allora il documento viene 
 [[modelli-e-template]] · [[pratica-2025-098]]
 
 ## Fonti
-[[02-template-relazione-tecnica]] · [[01-procedura-gestione-pratica]]
+template TM-07 di relazione · procedura PR-03 di gestione della pratica

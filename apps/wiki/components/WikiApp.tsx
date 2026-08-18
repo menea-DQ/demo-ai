@@ -9,6 +9,7 @@ import GraphView from "./GraphView";
 import LimitModal, { type LimitInfo } from "./LimitModal";
 import type { ChatMessage, ClientGraph, DocTarget, RelatedRef } from "./types";
 import type { Citation } from "@/lib/types";
+import type { Topic } from "@/lib/usecases";
 
 type SessionStatus = "loading" | "turnstile" | "ready" | "error";
 type Tab = "doc" | "graph";
@@ -20,6 +21,7 @@ export interface UsecaseClient {
   slug: string;
   companyName: string;
   assistantName: string;
+  topics: Topic[];
   suggestions: string[];
 }
 
@@ -241,6 +243,7 @@ export default function WikiApp({
             assistantName={usecase.assistantName}
             companyName={usecase.companyName}
             suggestions={usecase.suggestions}
+            topics={usecase.topics}
             messages={messages}
             onSend={send}
             disabled={busy}

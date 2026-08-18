@@ -2,7 +2,6 @@
 title: Manutenzione preventiva CNC
 type: concept
 tags: [produzione, manutenzione]
-sources: [05-log-manutenzione-cnc, 04-hr-onboarding-ferie, 06-vendite-garanzia-prodotto]
 updated: 2026-06-24
 ---
 
@@ -45,4 +44,4 @@ tocca la qualità del prodotto.
 [[sicurezza-emergenze]] · [[stabilimento-vimercate]]
 
 ## Fonti
-[[05-log-manutenzione-cnc]] · [[04-hr-onboarding-ferie]] · [[06-vendite-garanzia-prodotto]]
+quaderno di manutenzione CNC · documentazione HR · condizioni di vendita e garanzia

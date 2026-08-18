@@ -2,7 +2,6 @@
 title: Formazione sicurezza
 type: concept
 tags: [sicurezza, hr, hub]
-sources: [03-memo-sicurezza, 04-hr-onboarding-ferie, 02-manuale-qualita-iso9001]
 updated: 2026-06-24
 ---
 
@@ -26,4 +25,4 @@ updated: 2026-06-24
 [[sicurezza-emergenze]] · [[onboarding]] · [[iso-9001-sgq]] · [[dpi]]
 
 ## Fonti
-[[03-memo-sicurezza]] · [[04-hr-onboarding-ferie]] · [[02-manuale-qualita-iso9001]]
+memo sicurezza · documentazione HR · manuale qualità ISO 9001

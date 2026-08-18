@@ -16,7 +16,7 @@ Due documenti distinti ma incastrati, al centro della [[sicurezza-cantiere|sicur
 - È il piano **del cantiere**, redatto dal [[elena-bianchi|coordinatore (CSP/CSE)]] quando operano
   più imprese (art. 90).
 - Individua i rischi del cantiere (caduta dall'alto, seppellimento scavi, **interferenze**) e le
-  misure (ponteggi, parapetti, riunioni di coordinamento) *(fonte: [[02-psc-pos]])*.
+  misure (ponteggi, parapetti, riunioni di coordinamento) *(fonte: documentazione di sicurezza PSC e POS)*.
 
 ## POS — Piano Operativo di Sicurezza
 - È il piano **della singola impresa esecutrice**, derivato dal proprio [[dvr|DVR]].
@@ -34,4 +34,4 @@ dell'ingresso dell'impresa in cantiere. Questa verifica è anche una condizione 
 [[giornale-lavori]] · [[cantiere-via-tortona]]
 
 ## Fonti
-[[02-psc-pos]] · [[05-contratto-subappalto]]
+documentazione di sicurezza PSC e POS · contratto di subappalto

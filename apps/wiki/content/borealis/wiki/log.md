@@ -17,8 +17,8 @@ italiano (coerente con le fonti).
 
 ## [2026-06-24] ingest | Batch iniziale — 6 fonti (commessa C-2025-014)
 Ingestite tutte e 6 le fonti grezze della commessa "Residenze Aurora".
-- Fonti: [[01-capitolato-appalto]], [[02-psc-pos]], [[03-computo-metrico]], [[04-giornale-lavori]],
-  [[05-contratto-subappalto]], [[06-scheda-tecnica-dop]].
+- Fonti: [[01-capitolato-appalto]], documentazione di sicurezza PSC e POS, computo metrico estimativo, giornale dei lavori,
+  contratto di subappalto, [[06-scheda-tecnica-dop]].
 - Create 7 entità: [[borealis-costruzioni]], [[sede-milano]], [[cantiere-residenze-aurora]],
   [[cantiere-via-tortona]], [[subappalti-fornitori]], [[marco-ferraro]], [[elena-bianchi]].
 - Creati 15 concetti del verticale edile (commessa, capitolato, computo, SAL, varianti, collaudo,
@@ -34,3 +34,13 @@ Ingestite tutte e 6 le fonti grezze della commessa "Residenze Aurora".
 ## [2026-06-24] lint | Verifica integrità link
 Controllo: ogni `[[...]]` punta a una pagina esistente (sources/entities/concepts); nessuna pagina
 senza link in entrata. Le pagine hub risultano i nodi più collegati, coerente con [[SCHEMA]].
+
+
+## [2026-08-18] ingest | Revisione degli ambiti documentali (ticket #151)
+Allineamento all'elenco delle tipologie documentali del verticale edilizia. Restano consultabili
+capitolato d'appalto e scheda tecnica/DoP; si aggiungono il fascicolo di qualifica subappaltatore
+con DURC e l'elenco elaborati grafici/modello BIM. PSC-POS, computo metrico, giornale dei lavori e
+contratto di subappalto **escono dai documenti consultabili** e restano come menzione dentro le
+pagine di processo. Tre pagine sono state ri-titolate perché coincidevano con una tipologia
+documentale non consultabile (accettazione materiali, modifiche in corso d'opera, tracciabilità di
+cantiere). Sanato un link a `overview` che il grafo non risolveva. Grafo: 26 pagine, 0 orfani.

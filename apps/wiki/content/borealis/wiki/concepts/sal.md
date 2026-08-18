@@ -23,10 +23,10 @@ contabile" dei lavori eseguiti a una certa data, che abilita un pagamento.
 
 ## Cosa è collegato al SAL
 - **Esecuzione**: il primo SAL della commessa è stato emesso il 12/05/2026 (~9%) *(fonte:
-  [[04-giornale-lavori]])*.
+  giornale dei lavori)*.
 - **Varianti**: le maggiori quantità riconosciute con [[varianti-progetto|perizia di variante]]
   entrano nei SAL successivi.
-- **Subappalto**: la contabilità del [[05-contratto-subappalto|subappalto strutture]] è allineata ai
+- **Subappalto**: la contabilità del subappalto strutture è allineata ai
   SAL della commessa principale.
 
 ## Collega a
@@ -34,4 +34,4 @@ contabile" dei lavori eseguiti a una certa data, che abilita un pagamento.
 [[qualifica-subappaltatori]] · [[commessa]] · [[collaudo-asbuilt]]
 
 ## Fonti
-[[01-capitolato-appalto]] · [[03-computo-metrico]] · [[04-giornale-lavori]]
+[[01-capitolato-appalto]] · computo metrico estimativo · giornale dei lavori

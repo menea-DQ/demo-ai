@@ -27,4 +27,4 @@ in primis il [[comune-di-bologna]].
 [[meridian-studio]] · [[comune-di-bologna]] · [[fascicolo-pratica]]
 
 ## Fonti
-[[01-procedura-gestione-pratica]]
+procedura PR-03 di gestione della pratica

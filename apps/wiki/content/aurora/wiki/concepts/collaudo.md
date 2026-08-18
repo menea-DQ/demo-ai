@@ -2,7 +2,6 @@
 title: Collaudo
 type: concept
 tags: [processo, qualita]
-sources: [02-manuale-qualita-iso9001, 06-vendite-garanzia-prodotto, 05-log-manutenzione-cnc]
 updated: 2026-06-24
 ---
 
@@ -29,11 +28,11 @@ registra **esito e operatore**.
 - Tutte le fasi positive → **[[rilascio-lotto|rilascio del lotto]]**, che abilita la spedizione.
 
 Il collaudo è anche un punto di intercettazione dei problemi macchina: la vibrazione anomala del
-02/04 (CNC-04) è emersa **proprio in collaudo prove rotazione** (fonte: [[05-log-manutenzione-cnc]]).
+02/04 (CNC-04) è emersa **proprio in collaudo prove rotazione** (fonte: quaderno di manutenzione CNC).
 
 ## Collega a
 [[non-conformita]] · [[rilascio-lotto]] · [[tolleranze-classi-precisione]] · [[taratura-strumenti]] ·
 [[linea-cuscinetti-ax]] · [[reparto-qualita]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]] · [[06-vendite-garanzia-prodotto]] · [[05-log-manutenzione-cnc]]
+manuale qualità ISO 9001 · condizioni di vendita e garanzia · quaderno di manutenzione CNC

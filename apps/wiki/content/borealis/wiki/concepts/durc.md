@@ -16,7 +16,7 @@ condizione **abilitante**: senza DURC regolare non si lavora e non si viene paga
 - Prima dell'affidamento di un [[qualifica-subappaltatori|subappalto]] (parte dei requisiti).
 - Prima dell'ingresso in cantiere del [[subappalti-fornitori|subappaltatore]].
 - **A ogni [[sal|SAL]]**, prima di liquidare le competenze: DURC irregolare → pagamenti sospesi
-  *(fonte: [[05-contratto-subappalto]])*.
+  *(fonte: contratto di subappalto)*.
 
 ## Perché è un nodo di compliance
 È lo strumento con cui [[borealis-costruzioni]] (e il committente) si tutelano dalla responsabilità
@@ -24,8 +24,8 @@ solidale sui contributi del subappaltatore. La verifica spetta a [[marco-ferraro
 dalla [[sede-milano]] e si affianca alla verifica del [[psc-pos|POS]] fatta dal [[elena-bianchi|CSE]].
 
 ## Collega a
-[[qualifica-subappaltatori]] · [[sal]] · [[subappalti-fornitori]] · [[psc-pos]] · [[marco-ferraro]] ·
+[[qualifica-subappaltatori]] · [[02-qualifica-subappaltatore-durc|fascicolo di qualifica]] · [[sal]] · [[subappalti-fornitori]] · [[psc-pos]] · [[marco-ferraro]] ·
 [[commessa]]
 
 ## Fonti
-[[05-contratto-subappalto]] · [[01-capitolato-appalto]]
+contratto di subappalto · [[01-capitolato-appalto]]

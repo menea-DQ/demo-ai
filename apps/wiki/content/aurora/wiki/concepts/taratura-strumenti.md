@@ -2,7 +2,6 @@
 title: Taratura strumenti
 type: concept
 tags: [qualita, tecnico]
-sources: [02-manuale-qualita-iso9001]
 updated: 2026-06-24
 ---
 
@@ -23,4 +22,4 @@ intervalli definiti**. Il **registro** riporta data, esito ed ente.
 [[collaudo]] · [[tolleranze-classi-precisione]] · [[iso-9001-sgq]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]]
+manuale qualità ISO 9001

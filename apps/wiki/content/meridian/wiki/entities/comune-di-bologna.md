@@ -14,7 +14,7 @@ Bologna]], per il deposito di pratiche edilizie e la richiesta di pareri/autoriz
 
 ## Circolare prot. 45782/2026
 Ha emesso la circolare interpretativa del 14/05/2026 che inasprisce i requisiti per l'apertura di
-vani in murature portanti (fonte: [[03-circolare-interpretativa-normativa]]), superando la prassi
+vani in murature portanti (fonte: nota tecnica NT-12 sulla circolare comunale), superando la prassi
 precedente (prot. 12094/2019). Applicabile alle pratiche depositate dal 01/06/2026.
 
 ## Rapporti con lo Studio
@@ -27,4 +27,4 @@ secondo il [[know-how-senior|know-how]] consolidato dello Studio (vedi
 [[circolari-e-prassi]] · [[arch-marco-bianchi]] · [[sede-bologna]]
 
 ## Fonti
-[[03-circolare-interpretativa-normativa]]
+nota tecnica NT-12 sulla circolare comunale

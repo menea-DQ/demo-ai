@@ -15,7 +15,7 @@ tramite circolari e prassi di sportello.
 
 ## Come si recepisce una circolare
 Quando un ente emette una circolare interpretativa, l'area Normativa dello Studio la traduce in una
-**nota tecnica interna** (fonte: [[03-circolare-interpretativa-normativa]]) che indica cosa cambia
+**nota tecnica interna** (fonte: nota tecnica NT-12 sulla circolare comunale) che indica cosa cambia
 nell'operatività, da quando si applica e come citarla nei [[parere-tecnico|pareri]].
 
 ## Esempio
@@ -33,4 +33,4 @@ relazione è tecnicamente corretta secondo la norma primaria.
 [[gestione-normativa]] · [[comune-di-bologna]] · [[parere-tecnico]]
 
 ## Fonti
-[[03-circolare-interpretativa-normativa]]
+nota tecnica NT-12 sulla circolare comunale

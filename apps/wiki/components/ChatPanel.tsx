@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Markdown from "./Markdown";
 import type { ChatMessage, Citation, RelatedRef } from "./types";
+import type { Topic } from "@/lib/usecases";
 
 export default function ChatPanel({
   assistantName,
   companyName,
   suggestions,
+  topics,
   messages,
   onSend,
   disabled,
@@ -20,6 +22,7 @@ export default function ChatPanel({
   assistantName: string;
   companyName: string;
   suggestions: string[];
+  topics: Topic[];
   messages: ChatMessage[];
   onSend: (q: string) => void;
   disabled: boolean;
@@ -32,6 +35,9 @@ export default function ChatPanel({
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // A chat vuota non si scrolla: la vetrina degli ambiti e' piu' alta del riquadro e
+    // l'autoscroll nasconderebbe il saluto e le domande di esempio.
+    if (messages.length === 0) return;
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
@@ -69,7 +75,7 @@ export default function ChatPanel({
       {/* messaggi */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-5 space-y-5">
         {empty && (
-          <div className="h-full flex flex-col justify-center">
+          <div className="min-h-full flex flex-col justify-center">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
               <h3 className="font-display font-bold text-2xl mb-2">Ciao 👋</h3>
               <p className="text-[color:var(--color-ink-soft)] mb-5 text-sm leading-relaxed">
@@ -87,6 +93,21 @@ export default function ChatPanel({
                     {s}
                   </button>
                 ))}
+              </div>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <AmbitiGroup
+                  testId="ambiti-trattati"
+                  title="Cosa trovi qui"
+                  hint="Documenti consultabili: posso aprirli e citarli."
+                  labels={topics.filter((t) => t.covered).map((t) => t.label)}
+                />
+                <AmbitiGroup
+                  testId="ambiti-non-coperti"
+                  title="Cosa aggiungeremmo su misura"
+                  hint="Ambiti tipici del settore fuori da questa demo: posso nominarli, non citarli."
+                  labels={topics.filter((t) => !t.covered).map((t) => t.label)}
+                />
               </div>
             </motion.div>
           </div>
@@ -232,5 +253,32 @@ function Dot({ d = 0 }: { d?: number }) {
       animate={{ opacity: [0.3, 1, 0.3] }}
       transition={{ duration: 1, repeat: Infinity, delay: d }}
     />
+  );
+}
+
+/** Un gruppo della vetrina degli ambiti documentali (spec 151, B11). */
+function AmbitiGroup({
+  testId,
+  title,
+  hint,
+  labels,
+}: {
+  testId: string;
+  title: string;
+  hint: string;
+  labels: string[];
+}) {
+  return (
+    <div data-testid={testId} className="glass rounded-xl px-4 py-3">
+      <div className="font-display font-bold text-sm mb-1">{title}</div>
+      <p className="text-[11px] text-[color:var(--color-ink-soft)] mb-2 leading-snug">{hint}</p>
+      <ul className="text-[12px] leading-relaxed space-y-1">
+        {labels.map((l) => (
+          <li key={l} className="text-[color:var(--color-ink-soft)]">
+            {l}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

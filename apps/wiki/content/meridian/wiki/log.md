@@ -37,3 +37,13 @@ Sintetizzata la relazione compilata della pratica storica 2025-098 → fonte + c
 Scorporata l'entità [[sede-bologna]] da [[meridian-studio]]. Aggiunto il concetto
 [[linee-guida-categoria]] (standard degli ordini professionali). Aggiornati index e overview.
 Fase B (Productive #262) completata: content/meridian portato a parità con Aurora/Borealis.
+
+
+## [2026-08-18] ingest | Revisione degli ambiti documentali (ticket #151)
+Allineamento all'elenco delle tipologie documentali del verticale servizi professionali. Diventano
+consultabili lo storico pratiche e casi trattati e le checklist operative e di compliance; la
+"ricerca semantica sulla knowledge interna" resta una capability della demo, non un documento. Le
+sei fonti precedenti (procedura PR-03, template TM-07 e TM-11, nota tecnica NT-12, verbale di
+riunione, relazione compilata) **non sono più documenti consultabili**: restano menzionate nelle
+pagine di processo. Ri-titolate tre pagine che coincidevano con una tipologia non consultabile.
+Grafo: 22 pagine, 0 orfani, 0 link rotti.

@@ -30,8 +30,8 @@ contrattuale e gestionale.
 ## Ciclo di vita gestionale
 Avanzamento misurato dai [[sal|SAL]] (primo SAL al 12/05/2026, ~9%), evidenze nel
 [[giornale-lavori|giornale dei lavori]], lavorazioni in [[subappalti-fornitori|subappalto]]
-([[05-contratto-subappalto|contratto strutture]]). Eventuali [[varianti-progetto|varianti]] passano
+(contratto strutture). Eventuali [[varianti-progetto|varianti]] passano
 per perizia approvata. Chiusura prevista con [[collaudo-asbuilt|collaudo e as-built]].
 
 ## Fonti
-[[01-capitolato-appalto]] · [[03-computo-metrico]] · [[04-giornale-lavori]]
+[[01-capitolato-appalto]] · computo metrico estimativo · giornale dei lavori

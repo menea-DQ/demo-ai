@@ -25,4 +25,4 @@ Si coordina con [[marco-ferraro]] (Direzione Tecnica) e con il capocantiere; le 
 si appoggiano al [[dvr|DVR]] aziendale dell'impresa esecutrice.
 
 ## Fonti
-[[02-psc-pos]] · [[05-contratto-subappalto]]
+documentazione di sicurezza PSC e POS · contratto di subappalto

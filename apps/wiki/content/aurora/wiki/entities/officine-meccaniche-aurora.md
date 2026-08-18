@@ -2,7 +2,6 @@
 title: Officine Meccaniche Aurora S.r.l.
 type: entity
 tags: [azienda]
-sources: [01-manuale-aziendale, 02-manuale-qualita-iso9001]
 updated: 2026-06-24
 ---
 
@@ -38,4 +37,4 @@ Operativamente questo principio si concretizza nella catena
 [[non-conformita]]: ciò che non rispetta le specifiche viene bloccato in [[area-blocco-merci]].
 
 ## Fonti
-[[01-manuale-aziendale]] · [[02-manuale-qualita-iso9001]]
+manuale aziendale · manuale qualità ISO 9001

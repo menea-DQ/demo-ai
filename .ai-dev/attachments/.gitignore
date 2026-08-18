@@ -1,2 +1,7 @@
 *
 !.gitignore
+# Eccezione: l'allegato del ticket 151 e' l'ORACOLO della suite di apps/wiki (l'elenco delle
+# tipologie documentali con la marcatura X). Senza di lui la suite non gira su un clone pulito,
+# quindi va versionato.
+!productive-19362740/
+!productive-19362740/**

@@ -34,9 +34,15 @@ Catalogo di tutte le pagine del wiki. Per orientarsi parti da [[overview]] o dal
 - [[know-how-senior]] — le prassi tacite dei soci senior, non scritte in procedura. *(Operations)*
 
 ## Fonti
-- [[01-procedura-gestione-pratica]] — sintesi della procedura interna PR-03. *(Operations)*
-- [[02-template-relazione-tecnica]] — sintesi del template TM-07. *(Pratica)*
-- [[03-circolare-interpretativa-normativa]] — nota tecnica NT-12 su circolare comunale. *(Normativa)*
-- [[04-preventivo-proposta-tecnico-economica]] — sintesi del template TM-11. *(Commerciale)*
-- [[05-verbale-riunione-interna]] — sintesi del verbale riunione soci del 03/06/2026. *(Operations)*
-- [[06-parere-compilato-esempio]] — esempio compilato, pratica storica 2025-098. *(Pratica)*
+- [[01-storico-pratiche-archivio]] — estratto d'archivio delle pratiche chiuse per tipologia,
+  con esito, durata e lezione appresa. *(Pratica)*
+- [[02-checklist-operative-compliance]] — raccolta CL-01/CL-04: i controlli obbligatori su
+  pre-consegna, incarico, sopralluogo e deposito. *(Compliance)*
+
+## Ambiti documentali del verticale
+**Consultabili**: storico pratiche e casi trattati; checklist operative e di compliance. In più la
+**ricerca semantica sulla knowledge interna**, che non è un documento ma ciò che questa demo fa.
+**Solo menzionati** nelle pagine di processo: pareri e relazioni tecnico-professionali, modelli e
+template, normativa di riferimento, circolari e prassi degli enti, metodologie e procedure interne,
+fascicoli pratica e documentazione cliente, corrispondenza con enti e clienti, preventivi e
+proposte, verbali di riunione, linee guida di categoria, know-how dei senior.

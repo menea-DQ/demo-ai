@@ -15,9 +15,9 @@ individuale".
 
 ## Modelli attivi
 - **TM-07** — Relazione Tecnica / Parere Professionale (fonte:
-  [[02-template-relazione-tecnica]]): struttura in 7 sezioni usata per ogni [[parere-tecnico]].
+  template TM-07 di relazione): struttura in 7 sezioni usata per ogni [[parere-tecnico]].
 - **TM-11** — Proposta Tecnico-Economica / Preventivo (fonte:
-  [[04-preventivo-proposta-tecnico-economica]]): usata per ogni [[preventivo-proposta]] prima
+  template TM-11 di proposta tecnico-economica): usata per ogni [[preventivo-proposta]] prima
   dell'incarico.
 
 ## Perché sono importanti
@@ -34,4 +34,4 @@ caso reale (perizia estimativa), incluso il blocco di controllo incrociato final
 [[parere-tecnico]] · [[preventivo-proposta]] · [[checklist-compliance]]
 
 ## Fonti
-[[02-template-relazione-tecnica]] · [[04-preventivo-proposta-tecnico-economica]]
+template TM-07 di relazione · template TM-11 di proposta tecnico-economica

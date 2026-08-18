@@ -9,7 +9,7 @@
   },
   "phase": "spec",
   "startedAt": "2026-08-18T19:53:46.350Z",
-  "updatedAt": "2026-08-18T21:21:51.883Z",
+  "updatedAt": "2026-08-18T21:22:14.997Z",
   "gates": {
     "spec": {
       "approvedAt": "2026-08-18T20:19:56.293Z"
@@ -41,12 +41,12 @@
   "verification": {
     "status": "done",
     "tests": [
-      "post-commit re-check: pnpm -r test 56/56",
-      "pnpm -r test:e2e 9/9"
+      "post-docs re-check: pnpm -r test 56/56 (il commit di documentazione tocca solo .md: e2e non impattati",
+      "ultimo run 9/9)"
     ],
     "reason": null,
     "diffHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "at": "2026-08-18T21:16:00.837Z"
+    "at": "2026-08-18T21:22:14.997Z"
   },
   "aborted": null,
   "docReview": {
@@ -133,6 +133,10 @@
     {
       "at": "2026-08-18T21:21:51.883Z",
       "event": "changelog aggiornato"
+    },
+    {
+      "at": "2026-08-18T21:22:14.997Z",
+      "event": "verifica test: done"
     }
   ]
 }

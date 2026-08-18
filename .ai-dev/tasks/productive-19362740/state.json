@@ -9,7 +9,7 @@
   },
   "phase": "spec",
   "startedAt": "2026-08-18T19:53:46.350Z",
-  "updatedAt": "2026-08-18T21:15:35.817Z",
+  "updatedAt": "2026-08-18T21:16:00.837Z",
   "gates": {
     "spec": {
       "approvedAt": "2026-08-18T20:19:56.293Z"
@@ -41,12 +41,12 @@
   "verification": {
     "status": "done",
     "tests": [
-      "unit: @donq/security 11/11; integration: pnpm -r test 56/56 (security 11 + wiki 45); end-to-end: pnpm -r test:e2e 9/9 (incl. B11 vetrina); non-regression: diff strutturale vs snapshot before — nodi 32/28/26 -> 30/26/22",
-      "wiki:lint 0 orfani / 0 link rotti / 0 summary mancanti su tutte e 3 le aziende; build: next build OK"
+      "post-commit re-check: pnpm -r test 56/56",
+      "pnpm -r test:e2e 9/9"
     ],
     "reason": null,
-    "diffHash": "c10345861e72671fdcaaebb7fa67b9f6c1f3ca4af0efea12c5c0fac908e37018",
-    "at": "2026-08-18T20:58:02.343Z"
+    "diffHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "at": "2026-08-18T21:16:00.837Z"
   },
   "aborted": null,
   "docReview": null,
@@ -111,6 +111,10 @@
     {
       "at": "2026-08-18T21:15:35.817Z",
       "event": "GATE UMANO approvato: diff"
+    },
+    {
+      "at": "2026-08-18T21:16:00.837Z",
+      "event": "verifica test: done"
     }
   ]
 }

@@ -2,7 +2,6 @@
 title: Chiusure aziendali
 type: concept
 tags: [hr, manutenzione, hub]
-sources: [04-hr-onboarding-ferie, 05-log-manutenzione-cnc]
 updated: 2026-06-24
 ---
 
@@ -25,4 +24,4 @@ Quindi: **chiusura HR = finestra di [[manutenzione-preventiva|manutenzione]] mag
 [[ferie-permessi]] · [[manutenzione-preventiva]] · [[organizzazione-reparti]]
 
 ## Fonti
-[[04-hr-onboarding-ferie]] · [[05-log-manutenzione-cnc]]
+documentazione HR · quaderno di manutenzione CNC

@@ -2,7 +2,6 @@
 title: Reparto Qualità
 type: entity
 tags: [reparto, qualita]
-sources: [01-manuale-aziendale, 02-manuale-qualita-iso9001, 06-vendite-garanzia-prodotto, 05-log-manutenzione-cnc]
 updated: 2026-06-24
 ---
 
@@ -24,10 +23,10 @@ della filosofia "nessun pezzo dubbio esce dallo stabilimento" di [[officine-mecc
 
 ## Interfacce con altri reparti
 - **Produzione/Manutenzione**: un guasto CNC che impatta la qualità diventa una NC (es. 02/04
-  CNC-04, cfr. [[05-log-manutenzione-cnc]]).
+  CNC-04, cfr. quaderno di manutenzione CNC).
 - **Commerciale**: analizza i resi ([[resi-reclami-rma]]); un reso difettoso genera una NC; i
   reclami ricorrenti diventano input per le azioni correttive.
 
 ## Fonti
-[[01-manuale-aziendale]] · [[02-manuale-qualita-iso9001]] · [[06-vendite-garanzia-prodotto]] ·
-[[05-log-manutenzione-cnc]]
+manuale aziendale · manuale qualità ISO 9001 · condizioni di vendita e garanzia ·
+quaderno di manutenzione CNC

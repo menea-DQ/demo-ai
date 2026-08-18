@@ -2,7 +2,6 @@
 title: Carla Moretti
 type: entity
 tags: [persona]
-sources: [01-manuale-aziendale]
 updated: 2026-06-24
 ---
 
@@ -16,4 +15,4 @@ updated: 2026-06-24
 > estratti disponibili.
 
 ## Fonti
-[[01-manuale-aziendale]]
+manuale aziendale

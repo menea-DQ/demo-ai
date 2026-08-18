@@ -2,7 +2,6 @@
 title: ISO 9001 e Sistema di Gestione Qualità (SGQ)
 type: concept
 tags: [qualita, iso9001]
-sources: [02-manuale-qualita-iso9001, 01-manuale-aziendale, 04-hr-onboarding-ferie, 03-memo-sicurezza]
 updated: 2026-06-24
 ---
 
@@ -34,5 +33,5 @@ Per i ruoli di Qualità l'[[onboarding]] include un'introduzione al Sistema Qual
 [[azioni-correttive]] · [[formazione-sicurezza]] · [[organizzazione-reparti]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]] · [[01-manuale-aziendale]] · [[04-hr-onboarding-ferie]] ·
-[[03-memo-sicurezza]]
+manuale qualità ISO 9001 · manuale aziendale · documentazione HR ·
+memo sicurezza

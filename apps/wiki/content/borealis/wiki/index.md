@@ -58,10 +58,8 @@ trovare le pagine rilevanti, poi si entra nel dettaglio. Vedi anche [[overview]]
 | Pagina | File grezzo |
 |--------|-------------|
 | [[01-capitolato-appalto]] | `raw/01-capitolato-appalto.md` |
-| [[02-psc-pos]] | `raw/02-psc-pos.md` |
-| [[03-computo-metrico]] | `raw/03-computo-metrico.md` |
-| [[04-giornale-lavori]] | `raw/04-giornale-lavori.md` |
-| [[05-contratto-subappalto]] | `raw/05-contratto-subappalto.md` |
+| [[02-qualifica-subappaltatore-durc]] | `raw/02-qualifica-subappaltatore-durc.md` |
+| [[03-elaborati-grafici-bim]] | `raw/03-elaborati-grafici-bim.md` |
 | [[06-scheda-tecnica-dop]] | `raw/06-scheda-tecnica-dop.md` |
 
 ## 🔎 Lacune e idee (per il prossimo lint / nuove fonti)
@@ -73,3 +71,12 @@ trovare le pagine rilevanti, poi si entra nel dettaglio. Vedi anche [[overview]]
   tra le fonti.
 - **Possibile pagina futura**: un "flusso di commessa" end-to-end (gara → computo → cantiere → SAL →
   variante → collaudo) come diagramma.
+
+## Ambiti documentali del verticale
+**Consultabili** (c'è il documento, l'assistente lo cita): capitolati d'appalto e capitolati
+speciali; qualifiche e certificazioni subappaltatori, DURC; elaborati grafici, tavole, modelli BIM;
+schede tecniche materiali, DoP, marcatura CE.
+**Solo menzionati** nelle pagine di processo: computo-metrici estimativi, SAL, DDT e bolle
+fornitori, varianti di progetto, documentazione di sicurezza (PSC, POS, DVR), giornale dei lavori e
+verbali di cantiere, contratti e subappalti, corrispondenza di commessa, collaudi e as-built,
+documentazione per gare d'appalto, normativa tecnica e regolamenti edilizi.

@@ -1,5 +1,5 @@
 ---
-title: DDT e bolle fornitori
+title: Accettazione dei materiali in cantiere
 type: concept
 category: Operations
 tags: [processo, logistica, materiali]

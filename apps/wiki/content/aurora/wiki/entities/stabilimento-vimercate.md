@@ -2,7 +2,6 @@
 title: Stabilimento 1 — Vimercate (MB)
 type: entity
 tags: [sede]
-sources: [01-manuale-aziendale, 03-memo-sicurezza, 04-hr-onboarding-ferie]
 updated: 2026-06-24
 ---
 
@@ -24,4 +23,4 @@ Ingresso ai reparti con badge + [[dpi|DPI]]; visitatori accompagnati. Le regole 
 [[sicurezza-emergenze]] e [[formazione-sicurezza]] valgono qui come ad [[stabilimento-agrate]].
 
 ## Fonti
-[[01-manuale-aziendale]] · [[03-memo-sicurezza]] · [[04-hr-onboarding-ferie]]
+manuale aziendale · memo sicurezza · documentazione HR

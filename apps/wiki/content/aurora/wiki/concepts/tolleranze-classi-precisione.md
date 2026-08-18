@@ -2,7 +2,6 @@
 title: Tolleranze e classi di precisione
 type: concept
 tags: [qualita, tecnico]
-sources: [02-manuale-qualita-iso9001]
 updated: 2026-06-24
 ---
 
@@ -34,4 +33,4 @@ Le quote critiche sono marcate con il simbolo **◆** e usano **tolleranze geome
 [[taratura-strumenti]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]]
+manuale qualità ISO 9001

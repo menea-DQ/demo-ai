@@ -1,5 +1,5 @@
 ---
-title: Linee Guida e Standard di Categoria
+title: Standard professionali di riferimento
 type: concept
 category: Normativa
 tags: [linee-guida, ordine-professionale, standard, deontologia]

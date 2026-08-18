@@ -16,7 +16,7 @@ sul campo.
 ## Allestimento e perimetro
 - Recinzione, baraccamenti, cartello di cantiere e accessi controllati con tesserino.
 - Consegna del cantiere il **9 marzo 2026** (verbale firmato da DL, RUP e impresa), come da
-  [[giornale-lavori]] *(fonte: [[04-giornale-lavori]])*.
+  [[giornale-lavori]] *(fonte: giornale dei lavori)*.
 
 ## Sicurezza sul campo
 Il cantiere è governato dal [[psc-pos|PSC]] e dalla [[sicurezza-cantiere|gestione della sicurezza]]:
@@ -25,7 +25,7 @@ ponteggi con Pi.M.U.S., parapetti, DPI obbligatori, riunioni di coordinamento qu
 
 ## Lavorazioni in corso
 Struttura in c.a. eseguita dal subappaltatore Beton Service (vedi [[subappalti-fornitori]] e
-[[05-contratto-subappalto|contratto di subappalto]]); cappotto termico EPS
+contratto di subappalto); cappotto termico EPS
 ([[marcatura-ce-dop|con DoP]]). Avanzamento misurato dai [[sal|SAL]]: primo SAL al 12/05/2026.
 
 ## Eventi rilevanti
@@ -34,4 +34,4 @@ Struttura in c.a. eseguita dal subappaltatore Beton Service (vedi [[subappalti-f
 - Richiesta di [[varianti-progetto|variante distributiva]] al piano terra a maggio.
 
 ## Fonti
-[[02-psc-pos]] · [[04-giornale-lavori]]
+documentazione di sicurezza PSC e POS · giornale dei lavori

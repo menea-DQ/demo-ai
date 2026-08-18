@@ -1,5 +1,5 @@
 ---
-title: Know-how Non Scritto dei Senior
+title: Trasmissione del metodo dei soci
 type: concept
 category: Operations
 tags: [know-how, senior, tacito, formazione]
@@ -11,7 +11,7 @@ updated: 2026-07-07
 
 Non tutto il metodo di [[meridian-studio]] vive nelle procedure scritte. Alcune prassi consolidate
 esistono solo nella pratica quotidiana dei soci senior e si trasmettono per affiancamento o durante
-le [[verbale-riunione-interna|riunioni di studio]] (fonte: [[05-verbale-riunione-interna]]).
+le [[verbale-riunione-interna|riunioni di studio]] (fonte: verbale della riunione di studio).
 
 ## Esempi raccolti
 - **Integrazioni informali agli enti**: qualsiasi richiesta informale (telefonica, a sportello) va
@@ -34,4 +34,4 @@ candidato naturale per una futura pagina-hub del wiki che raccolga entrambi.
 [[verbale-riunione-interna]] · [[corrispondenza-enti-clienti]] · [[gestione-normativa]]
 
 ## Fonti
-[[05-verbale-riunione-interna]]
+verbale della riunione di studio

@@ -20,10 +20,10 @@ e la Soprintendenza; ha eseguito il controllo incrociato sulla [[pratica-2026-01
 In [[verbale-riunione-interna|riunione di studio]] ha condiviso una prassi non scritta: anticipare
 telefonicamente il deposito di pratiche complesse presso la Soprintendenza, per evitare rigetti
 procedurali su vizi di forma — parte del [[know-how-senior]] dello Studio (fonte:
-[[05-verbale-riunione-interna]]).
+verbale della riunione di studio).
 
 ## Collega a
 [[comune-di-bologna]] · [[pratica-2026-014]] · [[know-how-senior]]
 
 ## Fonti
-[[01-procedura-gestione-pratica]] · [[05-verbale-riunione-interna]]
+procedura PR-03 di gestione della pratica · verbale della riunione di studio

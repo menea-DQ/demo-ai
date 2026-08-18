@@ -2,7 +2,6 @@
 title: Azioni correttive
 type: concept
 tags: [processo, qualita]
-sources: [02-manuale-qualita-iso9001, 06-vendite-garanzia-prodotto, 03-memo-sicurezza]
 updated: 2026-06-24
 ---
 
@@ -17,7 +16,7 @@ Meccanismo di miglioramento continuo del [[iso-9001-sgq|SGQ]]: interventi strutt
   cause** con la Qualità ([[resi-reclami-rma]]).
 - **Audit** interni annuali.
 - Anche un **infortunio** legato a un processo può far scattare un'azione correttiva (fonte:
-  [[03-memo-sicurezza]]).
+  memo sicurezza).
 
 ## Chiusura
 Con responsabile assegnato e **verifica di efficacia** dell'intervento.
@@ -26,4 +25,4 @@ Con responsabile assegnato e **verifica di efficacia** dell'intervento.
 [[non-conformita]] · [[resi-reclami-rma]] · [[iso-9001-sgq]] · [[sicurezza-emergenze]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]] · [[06-vendite-garanzia-prodotto]] · [[03-memo-sicurezza]]
+manuale qualità ISO 9001 · condizioni di vendita e garanzia · memo sicurezza

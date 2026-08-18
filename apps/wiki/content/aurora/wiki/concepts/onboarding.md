@@ -2,7 +2,6 @@
 title: Onboarding nuovi assunti
 type: concept
 tags: [hr, hub]
-sources: [04-hr-onboarding-ferie, 03-memo-sicurezza, 02-manuale-qualita-iso9001]
 updated: 2026-06-24
 ---
 
@@ -32,4 +31,4 @@ A ogni neoassunto si affianca un **"buddy"** per le prime **due settimane**.
 [[stabilimento-vimercate]]
 
 ## Fonti
-[[04-hr-onboarding-ferie]] · [[03-memo-sicurezza]] · [[02-manuale-qualita-iso9001]]
+documentazione HR · memo sicurezza · manuale qualità ISO 9001

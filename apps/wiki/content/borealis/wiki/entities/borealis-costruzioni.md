@@ -23,7 +23,7 @@ cantieri e processi le fanno capo.
 ## Come lavora: per commesse
 Il modello operativo ruota attorno alla [[commessa]]: ogni appalto nasce da un [[capitolato]], si
 pianifica su un [[computo-metrico|computo metrico]] e si esegue con avanzamenti misurati dai
-[[sal|SAL]]. Vedi anche la [[overview]] per la tesi corrente del wiki.
+[[sal|SAL]].
 
 ## Sedi e cantieri
 - [[sede-milano]] — sede direzionale e uffici tecnici.
@@ -41,4 +41,4 @@ pianifica su un [[computo-metrico|computo metrico]] e si esegue con avanzamenti 
 > [[marcatura-ce-dop|DoP]], ogni subappaltatore la sua [[qualifica-subappaltatori|qualifica]].
 
 ## Fonti
-[[01-capitolato-appalto]] · [[04-giornale-lavori]]
+[[01-capitolato-appalto]] · giornale dei lavori

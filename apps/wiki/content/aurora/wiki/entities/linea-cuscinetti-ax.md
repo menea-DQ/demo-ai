@@ -2,7 +2,6 @@
 title: Linea Cuscinetti AX
 type: entity
 tags: [prodotto]
-sources: [01-manuale-aziendale, 06-vendite-garanzia-prodotto, 05-log-manutenzione-cnc]
 updated: 2026-06-24
 ---
 
@@ -36,4 +35,4 @@ Sui cuscinetti AX il [[collaudo]] esegue prove di **rotazione, rumorosità e gio
 scheda prodotto). Le quote critiche ◆ sono controllate al 100%.
 
 ## Fonti
-[[01-manuale-aziendale]] · [[06-vendite-garanzia-prodotto]] · [[05-log-manutenzione-cnc]]
+manuale aziendale · condizioni di vendita e garanzia · quaderno di manutenzione CNC

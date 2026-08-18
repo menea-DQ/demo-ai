@@ -1,5 +1,5 @@
 ---
-title: Varianti di progetto
+title: Modifiche in corso d'opera
 type: concept
 category: Commessa
 tags: [processo, varianti, hub]
@@ -26,7 +26,7 @@ contabilità.
 
 ## Da dove nascono le varianti (trigger)
 - **Imprevisti di cantiere**: es. acqua nello scavo a -3,20 m non prevista → possibile variante per
-  aggottamento (*fonte: [[04-giornale-lavori]]*).
+  aggottamento (*fonte: giornale dei lavori*).
 - **Richieste del committente**: es. modifica distribuzione interna di 4 alloggi al piano terra
   (ordine di servizio n. 07).
 - **Maggiori quantità** rispetto al [[computo-metrico|computo]].
@@ -41,4 +41,4 @@ cronoprogramma e va annotata nel [[giornale-lavori]]. Le varianti sono validate 
 [[commessa]] · [[marco-ferraro]]
 
 ## Fonti
-[[01-capitolato-appalto]] · [[04-giornale-lavori]]
+[[01-capitolato-appalto]] · giornale dei lavori

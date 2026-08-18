@@ -2,7 +2,6 @@
 title: Resi, reclami e RMA
 type: concept
 tags: [commerciale, qualita]
-sources: [06-vendite-garanzia-prodotto, 02-manuale-qualita-iso9001]
 updated: 2026-06-24
 ---
 
@@ -26,4 +25,4 @@ Gestione post-vendita, a cavallo tra Commerciale e [[reparto-qualita|Qualità]].
 [[condizioni-vendita]] · [[reparto-qualita]]
 
 ## Fonti
-[[06-vendite-garanzia-prodotto]] · [[02-manuale-qualita-iso9001]]
+condizioni di vendita e garanzia · manuale qualità ISO 9001

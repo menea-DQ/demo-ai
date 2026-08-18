@@ -15,9 +15,9 @@ costruire e per misurare.
 
 ## A cosa servono
 - **Esecuzione**: definiscono *cosa* e *come* costruire; le squadre e i [[subappalti-fornitori|subappaltatori]]
-  ci lavorano sopra (es. esecutivi strutturali del [[05-contratto-subappalto|subappalto strutture]]).
+  ci lavorano sopra (es. esecutivi strutturali del subappalto strutture).
 - **Computo da modello**: le quantità del [[computo-metrico|computo metrico]] sono estratte dal
-  modello BIM *(fonte: [[03-computo-metrico]])*.
+  modello BIM *(fonte: computo metrico estimativo)*.
 - **Coordinamento**: il BIM aiuta a individuare le interferenze tra struttura e impianti, tema anche
   della [[sicurezza-cantiere|sicurezza]] (interferenze tra imprese).
 
@@ -28,8 +28,8 @@ costruire e per misurare.
 - Nell'ordine di prevalenza contrattuale gli elaborati vengono subito dopo il [[capitolato]].
 
 ## Collega a
-[[commessa]] · [[computo-metrico]] · [[varianti-progetto]] · [[collaudo-asbuilt]] ·
+[[03-elaborati-grafici-bim|elenco elaborati e modello]] · [[commessa]] · [[computo-metrico]] · [[varianti-progetto]] · [[collaudo-asbuilt]] ·
 [[sicurezza-cantiere]] · [[capitolato]] · [[subappalti-fornitori]]
 
 ## Fonti
-[[01-capitolato-appalto]] · [[03-computo-metrico]]
+[[01-capitolato-appalto]] · computo metrico estimativo

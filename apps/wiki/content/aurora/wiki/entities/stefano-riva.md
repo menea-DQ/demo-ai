@@ -2,7 +2,6 @@
 title: Stefano Riva
 type: entity
 tags: [persona]
-sources: [01-manuale-aziendale, 02-manuale-qualita-iso9001]
 updated: 2026-06-24
 ---
 
@@ -16,4 +15,4 @@ updated: 2026-06-24
 - Riferimento per il [[iso-9001-sgq|SGQ]], le [[azioni-correttive]] e il [[collaudo]].
 
 ## Fonti
-[[01-manuale-aziendale]] · [[02-manuale-qualita-iso9001]]
+manuale aziendale · manuale qualità ISO 9001

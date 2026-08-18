@@ -1,5 +1,5 @@
 ---
-title: Giornale dei lavori e verbali di cantiere
+title: Tracciabilità quotidiana del cantiere
 type: concept
 category: Operations
 tags: [processo, cantiere, documentazione]
@@ -18,7 +18,7 @@ annota manodopera, mezzi, lavorazioni, meteo, ordini di servizio ed eventi. Insi
 - **Getti** e prelievo provini (qualità materiali, [[marcatura-ce-dop|DoP/CE]]).
 - Verbali di **sospensione/ripresa** (es. 4 gg per pioggia).
 - Soglie dei [[sal|SAL]] (primo SAL al 12/05).
-- Ordini di servizio che innescano [[varianti-progetto|varianti]] *(fonte: [[04-giornale-lavori]])*.
+- Ordini di servizio che innescano [[varianti-progetto|varianti]] *(fonte: giornale dei lavori)*.
 
 ## A cosa serve a valle
 - È l'**evidenza** che supporta la contabilità dei [[sal|SAL]] e le perizie di
@@ -32,4 +32,4 @@ annota manodopera, mezzi, lavorazioni, meteo, ordini di servizio ed eventi. Insi
 [[cantiere-via-tortona]] · [[subappalti-fornitori]]
 
 ## Fonti
-[[04-giornale-lavori]]
+giornale dei lavori

@@ -45,7 +45,7 @@ wiki/
 - **Cross-reference** con wikilink Obsidian `[[nome-file-senza-estensione]]`. Collegare
   generosamente: i collegamenti sono preziosi quanto le pagine.
 - **Citazioni alle fonti**: quando un'affermazione viene da una sorgente, citarla con il suo
-  codice, es. *(fonte: [[02-manuale-qualita-iso9001]])*.
+  codice, es. *(fonte: manuale qualità ISO 9001)*.
 - **Niente stub**: ogni pagina deve dire qualcosa di utile. Se un'idea è troppo piccola per una
   pagina, va come sezione di una pagina più grande.
 - **Contraddizioni / lacune**: segnalarle esplicitamente in un blocco `> [!warning]` o

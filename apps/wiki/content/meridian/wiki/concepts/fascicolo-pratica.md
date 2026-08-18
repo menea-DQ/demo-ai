@@ -11,7 +11,7 @@ updated: 2026-06-24
 
 **Pagina hub.** Il fascicolo di pratica è l'unità di lavoro centrale di [[meridian-studio]]: tutto
 ciò che riguarda un incarico vive qui, dall'apertura alla consegna firmata. È la cerniera tra
-Pratica, Operations e Compliance (fonte: [[01-procedura-gestione-pratica]]).
+Pratica, Operations e Compliance (fonte: procedura PR-03 di gestione della pratica).
 
 ## Apertura
 All'arrivo della lettera di incarico firmata, la segreteria tecnica assegna un **codice pratica**
@@ -41,4 +41,4 @@ conserva **10 anni** per responsabilità professionale, diventando parte dello
 [[preventivo-proposta]] · [[corrispondenza-enti-clienti]] · [[storico-pratiche]]
 
 ## Fonti
-[[01-procedura-gestione-pratica]] · [[02-template-relazione-tecnica]]
+procedura PR-03 di gestione della pratica · template TM-07 di relazione

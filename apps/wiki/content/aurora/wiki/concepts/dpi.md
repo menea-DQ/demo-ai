@@ -2,7 +2,6 @@
 title: DPI — Dispositivi di Protezione Individuale
 type: concept
 tags: [sicurezza]
-sources: [03-memo-sicurezza, 01-manuale-aziendale, 06-vendite-garanzia-prodotto, 04-hr-onboarding-ferie]
 updated: 2026-06-24
 ---
 
@@ -28,5 +27,5 @@ Blu = obbligo · rosso = divieto · giallo = pericolo (vedi [[sicurezza-emergenz
 [[sicurezza-emergenze]] · [[onboarding]] · [[linea-cuscinetti-ax]] · [[formazione-sicurezza]]
 
 ## Fonti
-[[03-memo-sicurezza]] · [[01-manuale-aziendale]] · [[06-vendite-garanzia-prodotto]] ·
-[[04-hr-onboarding-ferie]]
+memo sicurezza · manuale aziendale · condizioni di vendita e garanzia ·
+documentazione HR

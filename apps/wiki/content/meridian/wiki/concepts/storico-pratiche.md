@@ -16,11 +16,11 @@ pratiche nuove analoghe.
 ## Come si usa
 Durante una [[verbale-riunione-interna|riunione di studio]], un caso storico viene richiamato
 esplicitamente come precedente utile per un caso in discussione (fonte:
-[[05-verbale-riunione-interna]]).
+verbale della riunione di studio).
 
 ## Esempio
 La [[pratica-2025-098]] (perizia estimativa ai fini di successione, fonte:
-[[06-parere-compilato-esempio]]) è conservata come esempio di riferimento per casi estimativi
+relazione compilata della pratica 2025-098) è conservata come esempio di riferimento per casi estimativi
 analoghi: criteri OMI applicati, correzioni per piano e stato manutentivo, esito senza rilievi al
 controllo incrociato.
 
@@ -32,4 +32,4 @@ un indice tematico dei casi archiviati oltre al codice pratica e alla cartella f
 [[fascicolo-pratica]] · [[pratica-2025-098]] · [[verbale-riunione-interna]]
 
 ## Fonti
-[[06-parere-compilato-esempio]]
+relazione compilata della pratica 2025-098

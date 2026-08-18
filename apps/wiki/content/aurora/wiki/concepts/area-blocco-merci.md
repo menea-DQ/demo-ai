@@ -2,7 +2,6 @@
 title: Area "blocco merci"
 type: concept
 tags: [qualita, logistica, hub]
-sources: [02-manuale-qualita-iso9001, 06-vendite-garanzia-prodotto]
 updated: 2026-06-24
 ---
 
@@ -26,4 +25,4 @@ dubbia, coerente con il principio "nessun pezzo dubbio esce dallo stabilimento"
 [[non-conformita]] · [[resi-reclami-rma]] · [[rilascio-lotto]] · [[reparto-qualita]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]] · [[06-vendite-garanzia-prodotto]]
+manuale qualità ISO 9001 · condizioni di vendita e garanzia

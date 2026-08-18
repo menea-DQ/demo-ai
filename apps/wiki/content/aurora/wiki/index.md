@@ -62,18 +62,23 @@ trovare le pagine rilevanti, poi si entra nel dettaglio. Vedi anche [[overview]]
 ## 📄 Fonti (raw)
 | Pagina | File grezzo |
 |--------|-------------|
-| [[01-manuale-aziendale]] | `raw/01-manuale-aziendale.md` |
-| [[02-manuale-qualita-iso9001]] | `raw/02-manuale-qualita-iso9001.md` |
-| [[03-memo-sicurezza]] | `raw/03-memo-sicurezza.txt` |
-| [[04-hr-onboarding-ferie]] | `raw/04-hr-onboarding-ferie.md` |
-| [[05-log-manutenzione-cnc]] | `raw/05-log-manutenzione-cnc.md` |
-| [[06-vendite-garanzia-prodotto]] | `raw/06-vendite-garanzia-prodotto.md` |
+| [[01-scheda-tecnica-prodotto]] | `raw/01-scheda-tecnica-cuscinetto-ax.md` |
+| [[02-manuale-montaggio-uso-manutenzione]] | `raw/02-manuale-montaggio-uso-manutenzione.md` |
+| [[03-listino-catalogo-tecnico]] | `raw/03-listino-catalogo-tecnico.md` |
+| [[04-preventivo-proposta]] | `raw/04-preventivo-proposta.md` |
+
+Sono le quattro tipologie documentali **consultabili** del verticale manifatturiero: su queste
+l'assistente apre e cita un documento. Gli altri ambiti dell'elenco di settore (distinte base,
+disegni e file CAD, schemi elettrici e pneumatici, depliant, regole di configurazione, cicli di
+lavorazione, capitolati cliente, storico commesse, non conformità e collaudi, dichiarazioni di
+conformità, schede di sicurezza materiali, know-how non scritto) restano **menzionati** nelle
+pagine di processo: se ne parla, ma non c'è un documento da citare.
 
 ## 🔎 Lacune e idee (per il prossimo lint / nuove fonti)
 - **Persone**: documentati solo 2 nomi (Moretti, Riva). Mancano referenti di Produzione, Logistica,
   Commerciale, HR e il nome del RSPP (firma "M." nel memo).
-- **Dati prodotto**: valori numerici di C/C0, intervalli di rilubrificazione, range dimensionali AX
-  non presenti negli estratti.
+- **Dati prodotto**: ora dichiarati nella [[01-scheda-tecnica-prodotto|scheda tecnica]] (C, C0,
+  velocità limite, gioco); mancano ancora i range completi di tutte le famiglie.
 - **KPI**: il SGQ cita scarti/rilavorazioni/puntualità ma senza target né valori.
 - **Procedure parziali**: condizioni generali di vendita, schede macchina CNC e manuale prodotto
   completo sono richiamati ma non presenti tra le fonti.

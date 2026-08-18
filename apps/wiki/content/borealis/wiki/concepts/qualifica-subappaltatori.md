@@ -27,12 +27,12 @@ updated: 2026-06-24
 
 ## Esempio reale
 Beton Service S.r.l., subappaltatore delle strutture in c.a., è qualificato dal
-[[05-contratto-subappalto|contratto SUB-2025-014/03]] e tracciato in [[subappalti-fornitori]].
+contratto SUB-2025-014/03 e tracciato in [[subappalti-fornitori]].
 I materiali che porta hanno comunque [[marcatura-ce-dop|DoP/CE]] e [[ddt-bolle|DDT]].
 
 ## Collega a
-[[durc]] · [[psc-pos]] · [[sicurezza-cantiere]] · [[sal]] · [[subappalti-fornitori]] ·
+[[02-qualifica-subappaltatore-durc|fascicolo di qualifica]] · [[durc]] · [[psc-pos]] · [[sicurezza-cantiere]] · [[sal]] · [[subappalti-fornitori]] ·
 [[marcatura-ce-dop]] · [[commessa]] · [[marco-ferraro]] · [[elena-bianchi]]
 
 ## Fonti
-[[01-capitolato-appalto]] · [[05-contratto-subappalto]] · [[02-psc-pos]]
+[[01-capitolato-appalto]] · contratto di subappalto · documentazione di sicurezza PSC e POS

@@ -15,7 +15,7 @@ controllano) sta in [[qualifica-subappaltatori]]; qui sta l'anagrafica.
 
 ## Subappaltatori (esempio, commessa C-2025-014)
 - **Beton Service S.r.l.** — opere strutturali in c.a. (casseratura, armature, getti). SOA OG1
-  classifica II. Vincolato dal [[05-contratto-subappalto|contratto SUB-2025-014/03]] e dal proprio
+  classifica II. Vincolato dal contratto SUB-2025-014/03 e dal proprio
   [[psc-pos|POS]] verificato dal [[elena-bianchi|CSE]]. Vedi [[cantiere-via-tortona]].
 - **Impianti Lombardi S.r.l.** — impianti termici ed elettrici (categorie OS28/OS30).
 
@@ -31,4 +31,4 @@ Ogni subappaltatore deve avere SOA per la categoria, **[[durc|DURC]] regolare** 
 [[qualifica-subappaltatori|qualifica]].
 
 ## Fonti
-[[05-contratto-subappalto]] · [[06-scheda-tecnica-dop]]
+contratto di subappalto · [[06-scheda-tecnica-dop]]

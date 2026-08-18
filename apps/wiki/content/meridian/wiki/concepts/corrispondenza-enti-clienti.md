@@ -1,5 +1,5 @@
 ---
-title: Corrispondenza con Enti e Clienti
+title: Rapporti con enti e committenti
 type: concept
 category: Operations
 tags: [corrispondenza, enti, cliente, tracciabilita]
@@ -19,7 +19,7 @@ archiviano integralmente, con data e protocollo, nel fascicolo.
 ## Corrispondenza informale (il punto delicato)
 Non tutte le interazioni con un ente sono formali: telefonate, chiarimenti a sportello, mail non
 protocollate. Il [[know-how-senior|know-how dei senior]] (fonte:
-[[05-verbale-riunione-interna]]) è netto su questo punto: anche uno scambio informale va messo a
+verbale della riunione di studio) è netto su questo punto: anche uno scambio informale va messo a
 verbale nel fascicolo, con data e nome del referente contattato.
 
 > [!warning] Rischio se non tracciato
@@ -36,4 +36,4 @@ enti.
 [[fascicolo-pratica]] · [[know-how-senior]] · [[comune-di-bologna]]
 
 ## Fonti
-[[05-verbale-riunione-interna]] · [[01-procedura-gestione-pratica]]
+verbale della riunione di studio · procedura PR-03 di gestione della pratica

@@ -2,7 +2,6 @@
 title: Stabilimento 2 — Agrate Brianza (MB)
 type: entity
 tags: [sede]
-sources: [01-manuale-aziendale, 03-memo-sicurezza]
 updated: 2026-06-24
 ---
 
@@ -21,4 +20,4 @@ Stesse regole di [[stabilimento-vimercate]]: badge + DPI, visitatori accompagnat
 cuscinetti sono richiesti **guanti anti-taglio** ([[dpi]]).
 
 ## Fonti
-[[01-manuale-aziendale]] · [[03-memo-sicurezza]]
+manuale aziendale · memo sicurezza

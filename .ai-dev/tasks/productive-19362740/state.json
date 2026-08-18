@@ -1,0 +1,170 @@
+{
+  "stateVersion": 1,
+  "task": {
+    "id": "productive-19362740",
+    "type": "cr",
+    "title": "Revisione documenti progetto knowledgeBase",
+    "connector": "productive",
+    "reference": "https://app.productive.io/16052-donq/tasks/task/19362740"
+  },
+  "phase": "done",
+  "startedAt": "2026-08-18T19:53:46.350Z",
+  "updatedAt": "2026-08-18T21:25:30.669Z",
+  "gates": {
+    "spec": {
+      "approvedAt": "2026-08-18T20:19:56.293Z"
+    },
+    "plan": {
+      "approvedAt": "2026-08-18T20:24:35.031Z"
+    },
+    "diff": {
+      "approvedAt": "2026-08-18T21:15:35.816Z"
+    }
+  },
+  "spec": {
+    "path": ".ai-dev/specs/151-revisione-documenti-knowledge-base.md",
+    "savedAt": "2026-08-18T20:20:01.423Z"
+  },
+  "branch": {
+    "name": "feat/wiki-ambiti-documentali-151",
+    "base": "main",
+    "createdAt": "2026-08-18T20:26:46.546Z"
+  },
+  "testsAuthored": {
+    "at": "2026-08-18T20:38:41.064Z"
+  },
+  "snapshot": {
+    "status": "captured",
+    "reason": "graph.json + output wiki:lint + conteggi nodi/archi per azienda (aurora 32/284, borealis 28/302, meridian 26/163) in scratchpad/snapshot-151-before — il playbook non ha comando non-regression",
+    "at": "2026-08-18T20:27:12.609Z"
+  },
+  "verification": {
+    "status": "done",
+    "tests": [
+      "verifica finale su albero pulito: pnpm -r test 56/56",
+      "pnpm -r test:e2e 9/9",
+      "wiki:lint 0 orfani/0 link rotti sulle 3 aziende"
+    ],
+    "reason": null,
+    "diffHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "at": "2026-08-18T21:25:20.578Z"
+  },
+  "aborted": null,
+  "docReview": {
+    "status": "done",
+    "docs": [
+      "apps/wiki/ARCHITECTURE.md",
+      ".ai-dev/changelog.md"
+    ],
+    "reason": null,
+    "at": "2026-08-18T21:21:51.830Z"
+  },
+  "changelog": {
+    "updatedAt": "2026-08-18T21:21:51.882Z"
+  },
+  "ticketUpdates": [
+    {
+      "status": "spec-approvata",
+      "at": "2026-08-18T20:20:16.913Z"
+    },
+    {
+      "status": "4. Review",
+      "at": "2026-08-18T21:24:44.871Z"
+    }
+  ],
+  "pr": {
+    "url": "https://github.com/menea-DQ/demo-ai/pull/2",
+    "at": "2026-08-18T21:24:17.818Z"
+  },
+  "overrides": [],
+  "log": [
+    {
+      "at": "2026-08-18T19:53:46.350Z",
+      "event": "task avviato"
+    },
+    {
+      "at": "2026-08-18T19:54:47.499Z",
+      "event": "fase → spec"
+    },
+    {
+      "at": "2026-08-18T20:19:26.907Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T20:19:56.294Z",
+      "event": "GATE UMANO approvato: spec"
+    },
+    {
+      "at": "2026-08-18T20:20:01.423Z",
+      "event": "spec salvata: .ai-dev/specs/151-revisione-documenti-knowledge-base.md"
+    },
+    {
+      "at": "2026-08-18T20:20:16.914Z",
+      "event": "ticket aggiornato: spec-approvata"
+    },
+    {
+      "at": "2026-08-18T20:21:38.777Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T20:24:35.032Z",
+      "event": "GATE UMANO approvato: plan"
+    },
+    {
+      "at": "2026-08-18T20:26:46.547Z",
+      "event": "branch di lavoro: feat/wiki-ambiti-documentali-151 (da main)"
+    },
+    {
+      "at": "2026-08-18T20:27:12.609Z",
+      "event": "snapshot \"before\": captured (graph.json + output wiki:lint + conteggi nodi/archi per azienda (aurora 32/284, borealis 28/302, meridian 26/163) in scratchpad/snapshot-151-before — il playbook non ha comando non-regression)"
+    },
+    {
+      "at": "2026-08-18T20:38:41.065Z",
+      "event": "test scritti e committati dal test-author (prima del codice)"
+    },
+    {
+      "at": "2026-08-18T20:58:02.344Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:15:35.817Z",
+      "event": "GATE UMANO approvato: diff"
+    },
+    {
+      "at": "2026-08-18T21:16:00.837Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:21:51.831Z",
+      "event": "doc-review: done"
+    },
+    {
+      "at": "2026-08-18T21:21:51.883Z",
+      "event": "changelog aggiornato"
+    },
+    {
+      "at": "2026-08-18T21:22:14.997Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:24:17.818Z",
+      "event": "PR aperta: https://github.com/menea-DQ/demo-ai/pull/2"
+    },
+    {
+      "at": "2026-08-18T21:24:44.872Z",
+      "event": "ticket aggiornato: 4. Review"
+    },
+    {
+      "at": "2026-08-18T21:24:55.947Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:25:20.578Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:25:30.668Z",
+      "event": "task chiuso"
+    }
+  ]
+}

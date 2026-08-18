@@ -2,7 +2,6 @@
 title: Non Conformità (NC)
 type: concept
 tags: [processo, qualita, hub]
-sources: [02-manuale-qualita-iso9001, 05-log-manutenzione-cnc, 06-vendite-garanzia-prodotto, 01-manuale-aziendale]
 updated: 2026-06-24
 ---
 
@@ -33,7 +32,7 @@ automatico.
   rumorosità, gioco) negative. → vedi [[tolleranze-classi-precisione]].
 - **Manutenzione/Produzione** ([[manutenzione-preventiva]]): un guasto CNC che impatta la qualità.
   *Esempio reale 02/04: vibrazione anomala su CNC-04, sospetto gioco cuscinetto → NC aperta*
-  (fonte: [[05-log-manutenzione-cnc]]).
+  (fonte: quaderno di manutenzione CNC).
 - **Montaggio prodotto** ([[linea-cuscinetti-ax]]): danno da montaggio a percussione diretta
   sull'anello.
 - **Resi cliente** ([[resi-reclami-rma]]): un reso analizzato e risultato difettoso genera una NC;
@@ -48,5 +47,5 @@ automatico.
 [[resi-reclami-rma]] · [[manutenzione-preventiva]] · [[linea-cuscinetti-ax]] · [[rilascio-lotto]]
 
 ## Fonti
-[[02-manuale-qualita-iso9001]] · [[05-log-manutenzione-cnc]] · [[06-vendite-garanzia-prodotto]] ·
-[[01-manuale-aziendale]]
+manuale qualità ISO 9001 · quaderno di manutenzione CNC · condizioni di vendita e garanzia ·
+manuale aziendale

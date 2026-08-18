@@ -18,7 +18,7 @@ della contabilità.
   modello).
 - **Prezzi**: da prezziario regionale (es. Lombardia 2025) o da **analisi prezzi** per voci fuori
   prezziario.
-- **Oneri della sicurezza**: voce a parte, **non soggetta a ribasso** *(fonte: [[03-computo-metrico]])*.
+- **Oneri della sicurezza**: voce a parte, **non soggetta a ribasso** *(fonte: computo metrico estimativo)*.
 
 ## Come è organizzato
 In capitoli/WBS per categoria (scavi, strutture in c.a., tamponature/isolamento, impianti). Le voci a
@@ -26,7 +26,7 @@ misura (es. getti di c.a.) sono contabilizzate sui [[sal|SAL]] in base a quanto 
 
 ## Relazioni
 - Le maggiori quantità rispetto al computo richiedono [[varianti-progetto|perizia di variante]].
-- Il cap. strutture è la base economica del [[05-contratto-subappalto|subappalto]] a
+- Il cap. strutture è la base economica del subappalto a
   [[subappalti-fornitori|Beton Service]].
 
 ## Collega a
@@ -34,4 +34,4 @@ misura (es. getti di c.a.) sono contabilizzate sui [[sal|SAL]] in base a quanto 
 [[subappalti-fornitori]]
 
 ## Fonti
-[[03-computo-metrico]]
+computo metrico estimativo

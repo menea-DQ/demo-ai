@@ -2,7 +2,6 @@
 title: Condizioni di vendita
 type: concept
 tags: [commerciale]
-sources: [06-vendite-garanzia-prodotto]
 updated: 2026-06-24
 ---
 
@@ -25,4 +24,4 @@ Le forniture seguono le **condizioni generali di vendita**: termini di **consegn
 [[stabilimento-agrate]]
 
 ## Fonti
-[[06-vendite-garanzia-prodotto]]
+condizioni di vendita e garanzia

@@ -53,6 +53,7 @@ export default async function WikiUsecasePage({
           companyName: uc.companyName,
           assistantName: uc.assistantName,
           suggestions: uc.suggestions,
+          topics: uc.topics,
         }}
         graph={graph}
         turnstileSiteKey={turnstileEnabled ? sec.turnstileSiteKey : ""}

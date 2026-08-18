@@ -7,9 +7,9 @@
     "connector": "productive",
     "reference": "https://app.productive.io/16052-donq/tasks/task/19362740"
   },
-  "phase": "spec",
+  "phase": "done",
   "startedAt": "2026-08-18T19:53:46.350Z",
-  "updatedAt": "2026-08-18T21:25:20.578Z",
+  "updatedAt": "2026-08-18T21:25:30.669Z",
   "gates": {
     "spec": {
       "approvedAt": "2026-08-18T20:19:56.293Z"
@@ -161,6 +161,10 @@
     {
       "at": "2026-08-18T21:25:20.578Z",
       "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:25:30.668Z",
+      "event": "task chiuso"
     }
   ]
 }

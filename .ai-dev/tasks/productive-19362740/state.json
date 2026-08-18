@@ -9,7 +9,7 @@
   },
   "phase": "spec",
   "startedAt": "2026-08-18T19:53:46.350Z",
-  "updatedAt": "2026-08-18T21:16:00.837Z",
+  "updatedAt": "2026-08-18T21:21:51.883Z",
   "gates": {
     "spec": {
       "approvedAt": "2026-08-18T20:19:56.293Z"
@@ -49,8 +49,18 @@
     "at": "2026-08-18T21:16:00.837Z"
   },
   "aborted": null,
-  "docReview": null,
-  "changelog": null,
+  "docReview": {
+    "status": "done",
+    "docs": [
+      "apps/wiki/ARCHITECTURE.md",
+      ".ai-dev/changelog.md"
+    ],
+    "reason": null,
+    "at": "2026-08-18T21:21:51.830Z"
+  },
+  "changelog": {
+    "updatedAt": "2026-08-18T21:21:51.882Z"
+  },
   "ticketUpdates": [
     {
       "status": "spec-approvata",
@@ -115,6 +125,14 @@
     {
       "at": "2026-08-18T21:16:00.837Z",
       "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:21:51.831Z",
+      "event": "doc-review: done"
+    },
+    {
+      "at": "2026-08-18T21:21:51.883Z",
+      "event": "changelog aggiornato"
     }
   ]
 }

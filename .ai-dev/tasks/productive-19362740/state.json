@@ -9,7 +9,7 @@
   },
   "phase": "spec",
   "startedAt": "2026-08-18T19:53:46.350Z",
-  "updatedAt": "2026-08-18T21:24:55.947Z",
+  "updatedAt": "2026-08-18T21:25:20.578Z",
   "gates": {
     "spec": {
       "approvedAt": "2026-08-18T20:19:56.293Z"
@@ -41,12 +41,13 @@
   "verification": {
     "status": "done",
     "tests": [
-      "post-consegna re-check: pnpm -r test 56/56 (dall'ultimo run e2e 9/9 e' cambiato solo lo stato del task",
-      "nessun codice)"
+      "verifica finale su albero pulito: pnpm -r test 56/56",
+      "pnpm -r test:e2e 9/9",
+      "wiki:lint 0 orfani/0 link rotti sulle 3 aziende"
     ],
     "reason": null,
-    "diffHash": "61f08a30c3655310d5db587a8be1b4dbedca1461dc3defb393b508ddedb8cee5",
-    "at": "2026-08-18T21:24:55.946Z"
+    "diffHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "at": "2026-08-18T21:25:20.578Z"
   },
   "aborted": null,
   "docReview": {
@@ -155,6 +156,10 @@
     },
     {
       "at": "2026-08-18T21:24:55.947Z",
+      "event": "verifica test: done"
+    },
+    {
+      "at": "2026-08-18T21:25:20.578Z",
       "event": "verifica test: done"
     }
   ]
